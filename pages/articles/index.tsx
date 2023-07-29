@@ -17,8 +17,6 @@ export const getStaticProps = async () => {
 };
 
 const Articles = ({ articles }: { articles: any }) => {
-  console.log('articles', articles);
-
   return (
     <>
       <Head>
