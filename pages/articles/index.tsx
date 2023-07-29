@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react';
-import apolloClient from '@/utils/apolloClient';
 import GET_ARTICLES from '@/gql/getArticles';
 import client from '@/utils/apolloClient';
 import Title from '@/components/Title';
@@ -13,27 +11,13 @@ export const getStaticProps = async () => {
 
   if (!data) return { notFound: true };
 
-  console.log('data', data);
-
   return {
     props: { articles: data.articles },
   };
 };
 
 const Articles = ({ articles }: { articles: any }) => {
-  // const [articles, setArticles] = useState(null);
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const { data } = await client.query({
-  //       query: GET_ARTICLES,
-  //     });
-
   console.log('articles', articles);
-  //   };
-
-  //   const arts = fetchData();
-  // }, []);
 
   return (
     <>
