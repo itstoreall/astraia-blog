@@ -17,8 +17,7 @@ export const getServerSideProps = async (context: any) => {
 };
 
 const Article = ({ article }: { article: any }) => {
-  console.log('article --->', article);
-  return <p>{article.title}</p>;
+  return <p>{`${article.title} ${article.id}`}</p>;
 };
 
 export default Article;
