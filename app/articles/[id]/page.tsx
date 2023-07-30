@@ -6,9 +6,6 @@ interface IProps {
   params: { id: string };
 }
 
-// export const dynamic = "force-dynamic";
-// export const revalidate = 60;
-
 export const generateMetadata = async ({
   params: { id },
 }: IProps): Promise<Metadata> => {
@@ -30,3 +27,10 @@ const Article = async ({ params: { id } }: IProps) => {
 };
 
 export default Article;
+
+/*
+
+export const dynamic = "force-dynamic";
+export const revalidate = 60;
+
+*/

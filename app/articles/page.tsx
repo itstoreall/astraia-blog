@@ -8,9 +8,6 @@ export const metadata: Metadata = {
   description: "Astraia blog - articles",
 };
 
-// export const dynamic = "force-dynamic";
-// export const revalidate = 10;
-
 const Articles = async () => {
   const articles = await services.getArticles();
 
@@ -25,3 +22,10 @@ const Articles = async () => {
 };
 
 export default Articles;
+
+/*
+
+export const dynamic = "force-dynamic";
+export const revalidate = 10;
+
+*/
