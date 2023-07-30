@@ -6,8 +6,7 @@ const getArticles = async () => {
   const { data } = await getClient().query({
     query: GET_ARTICLES,
     context: {
-      fetchOptions: { next: { revalidate: 0 } }, // *
-      // fetchOptions: { cache: "no-store" } }, // *
+      fetchOptions: { next: { revalidate: 0 } },
     },
   });
 
@@ -21,8 +20,7 @@ const getArticle = async (id: string) => {
     query: GET_ARTICLE_BY_ID,
     variables: { id },
     context: {
-      fetchOptions: { next: { revalidate: 0 } }, // *
-      // fetchOptions: { cache: "no-store" } }, // *
+      fetchOptions: { next: { revalidate: 0 } },
     },
   });
 
@@ -37,3 +35,12 @@ const services = {
 };
 
 export default services;
+
+/*
+
+context: {
+  fetchOptions: { next: { revalidate: 0 } },
+  // fetchOptions: { cache: "no-store" } },
+},
+
+*/

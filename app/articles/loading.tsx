@@ -1,10 +1,10 @@
-import Title from "@/components/Title";
+import Spinner from "@/components/Loading/Spinner";
 
 const Loading = () => {
   return (
-    <main>
-      <Title tag={"h2"} text={`Loading`} />
-    </main>
+    <div>
+      <Spinner />
+    </div>
   );
 };
 
