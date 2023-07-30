@@ -1,36 +1,26 @@
 import { Metadata } from "next";
-import { getClient } from "@/lib/client";
-import GET_ARTICLE_BY_ID from "@/gql/getArticleById";
+import services from "@/services";
 import Title from "@/components/Title";
 
 interface IProps {
-  params: {
-    id: string;
-  };
+  params: { id: string };
 }
+
+// export const dynamic = "force-dynamic";
+// export const revalidate = 60;
 
 export const generateMetadata = async ({
   params: { id },
 }: IProps): Promise<Metadata> => {
-  return { title: id };
+  const article = await services.getArticle(id);
+
+  return { title: article.title };
 };
 
-export const revalidate = 60;
-
 const Article = async ({ params: { id } }: IProps) => {
-  const { data } = await getClient().query({
-    query: GET_ARTICLE_BY_ID,
-    variables: { id },
-    // context: {
-    //   fetchOptions: {
-    //     next: { revalidate: 60 },
-    //   },
-    // },
-  });
+  const article = await services.getArticle(id);
 
-  if (!data) return <p>no article</p>;
-
-  const article = data?.getArticleById;
+  if (!article) return <p>no article</p>;
 
   return (
     <main>

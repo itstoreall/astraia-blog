@@ -1,7 +1,5 @@
 import { Metadata } from "next";
-// import { ApolloClient, InMemoryCache } from "@apollo/client";
-import { getClient } from "@/lib/client";
-import GET_ARTICLES from "@/gql/getArticles";
+import services from "@/services";
 import Title from "@/components/Title";
 import ArticleList from "@/components/Articles/ArticleList";
 
@@ -10,19 +8,13 @@ export const metadata: Metadata = {
   description: "Astraia blog - articles",
 };
 
+// export const dynamic = "force-dynamic";
+// export const revalidate = 10;
+
 const Articles = async () => {
-  const { data } = await getClient().query({
-    query: GET_ARTICLES,
-    context: {
-      fetchOptions: {
-        next: { revalidate: 60 },
-      },
-    },
-  });
+  const articles = await services.getArticles();
 
-  if (!data) return <p>no articles</p>;
-
-  const articles = data?.articles || [];
+  if (!articles?.length) return <p>no articles</p>;
 
   return (
     <main>
