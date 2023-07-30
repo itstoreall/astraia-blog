@@ -15,17 +15,17 @@ export const generateMetadata = async ({
   return { title: id };
 };
 
-// export const revalidate = 10;
+export const revalidate = 60;
 
 const Article = async ({ params: { id } }: IProps) => {
   const { data } = await getClient().query({
     query: GET_ARTICLE_BY_ID,
     variables: { id },
-    context: {
-      fetchOptions: {
-        next: { revalidate: 60 },
-      },
-    },
+    // context: {
+    //   fetchOptions: {
+    //     next: { revalidate: 60 },
+    //   },
+    // },
   });
 
   if (!data) return <p>no article</p>;
