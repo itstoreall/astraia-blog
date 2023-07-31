@@ -1,9 +1,10 @@
-import { Suspense } from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.scss";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import NextThemeProvider from "../providers/themeProvider";
+import ThemeSwitcher from "@/components/Themes/ThemeSwitcher";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,9 +22,12 @@ export default function RootLayout({
     <html lang="ru">
       <body className={inter.className}>
         <Header />
-        <Suspense fallback={<Loading />}>
-          <main>{children}</main>
-        </Suspense>
+        <main>
+          <NextThemeProvider>
+            {children}
+            <ThemeSwitcher />
+          </NextThemeProvider>
+        </main>
         <Footer />
       </body>
     </html>
