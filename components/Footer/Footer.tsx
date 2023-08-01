@@ -1,4 +1,4 @@
-import ThemeSwitcher from "@/components/ThemeSwitcher/ThemeSwitcher";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
 import Navbar from "../Navbar";
 
 const Footer = () => {
