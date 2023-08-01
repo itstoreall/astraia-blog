@@ -1,16 +1,17 @@
-@import '../theme/index.scss';
-@import '../styles/vars.scss';
+@import "../theme/index.scss";
+@import "../styles/vars.scss";
 
 body {
   margin: 0;
   height: 100%;
 
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  background-color: $dark;
   transition: background-color 0.4s ease;
 }
 
@@ -51,11 +52,11 @@ footer {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-[data-theme='light'] {
+[data-theme="light"] body {
   background-color: $light;
   transition: $s04;
   color: $dark;
@@ -65,7 +66,7 @@ code {
   }
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] body {
   background-color: $dark;
   transition: $s04;
   color: $light;
