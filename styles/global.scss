@@ -62,7 +62,7 @@ code {
 }
 
 .main {
-  background-color: $colorGreen;
+  min-height: 100vh;
 }
 
 [data-theme="light"] body {

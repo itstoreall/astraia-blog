@@ -27,6 +27,7 @@ $colorRed: red;
     --button: #{$contrstLight};
     --button-hover: #{$contrstLightHover};
     --middleGrey: #{$middleGrey};
+    --middleGreyHover: #{$middleGreyHover};
     --inputFocus: #{$colorGreen};
   }
 
@@ -42,6 +43,7 @@ $colorRed: red;
     --button: #{$contrstDark};
     --button-hover: #{$contrstDarkHover};
     --middleGrey: #{$middleGrey};
+    --middleGreyHover: #{$middleGreyHover};
     --inputFocus: #{$colorGreen};
   }
 }

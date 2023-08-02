@@ -1,0 +1,48 @@
+@import "../../theme/index.scss";
+@import "../../styles/vars.scss";
+@import "../../styles/_mixins.scss";
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  height: $footerHeight;
+
+  .content {
+    @include themeHandler() {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: calc(100% - 1px);
+      border-top: 1px solid var(--middleGrey);
+
+      & > div:first-child {
+        margin-bottom: 20px;
+      }
+
+      .copyrightBlock {
+        font-size: 15px;
+        color: var(--middleGrey);
+
+        .copyright {
+          display: flex;
+          justify-content: center;
+
+          .logoLink {
+            color: inherit;
+
+            &:hover {
+              color: var(--button);
+            }
+          }
+
+          .copyrightIcon {
+            margin: 0 5px;
+          }
+        }
+      }
+    }
+  }
+}
