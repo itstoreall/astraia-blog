@@ -1,0 +1,23 @@
+@import "../../styles/vars.scss";
+
+.headerContainer {
+  margin: 0 auto;
+  width: 100%;
+  max-width: $max;
+  // background-color: palevioletred;
+}
+
+.mainContainer {
+  padding: $headerHeight 0 $footerHeight 0;
+  margin: 0 auto;
+  width: 100%;
+  max-width: $max;
+  // background-color: pink;
+}
+
+.footerContainer {
+  margin: 0 auto;
+  width: 100%;
+  max-width: $max;
+  // background-color: palegreen;
+}
