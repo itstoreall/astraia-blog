@@ -10,24 +10,24 @@ const ArticlesButton = () => {
   const height = "29";
   const viewBox = "0 0 32 32";
 
+  const currentTheme = theme === "light" || theme === "dark" ? theme : "dark";
+
   return (
     <>
-      {theme && (
-        <Link href={"/articles"}>
-          <div className={`${s.articlesButtonWrap} ${s[theme]}`}>
-            <div className={s.articlesButton}>
-              <svg
-                width={width}
-                height={height}
-                viewBox={viewBox}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M0 0h8v8H0zm12 2h20v4H12zM0 12h8v8H0zm12 2h20v4H12zM0 24h8v8H0zm12 2h20v4H12z" />
-              </svg>
-            </div>
+      <Link href={"/articles"}>
+        <div className={`${s.articlesButtonWrap} ${s[currentTheme]}`}>
+          <div className={s.articlesButton}>
+            <svg
+              width={width}
+              height={height}
+              viewBox={viewBox}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M0 0h8v8H0zm12 2h20v4H12zM0 12h8v8H0zm12 2h20v4H12zM0 24h8v8H0zm12 2h20v4H12z" />
+            </svg>
           </div>
-        </Link>
-      )}
+        </div>
+      </Link>
     </>
   );
 };
