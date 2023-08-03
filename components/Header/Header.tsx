@@ -4,7 +4,7 @@ import { getCurrentTheme } from "@/utils";
 import s from "./Header.module.scss";
 import HeaderContainer from "../Containers/HeaderContainer";
 import Logo from "../logo";
-import ArticlesButton from "../ArticlesButton";
+// import ArticlesButton from "../ArticlesButton";
 
 const Header = () => {
   const { theme } = useTheme();
@@ -16,7 +16,7 @@ const Header = () => {
       <HeaderContainer>
         <div className={`${s.content} ${s[currentTheme]}`}>
           <Logo />
-          <ArticlesButton />
+          {/* <ArticlesButton /> */}
         </div>
       </HeaderContainer>
     </header>

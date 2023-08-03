@@ -1,4 +1,5 @@
 import { FC } from "react";
+import s from "./Title.module.scss";
 
 interface TitleProps {
   tag?: keyof JSX.IntrinsicElements;
@@ -8,7 +9,7 @@ interface TitleProps {
 const Title: FC<TitleProps> = ({ tag, text }) => {
   const Tag = tag || "h1";
 
-  return <Tag>{text}</Tag>;
+  return <Tag className={s.title}>{text}</Tag>;
 };
 
 export default Title;

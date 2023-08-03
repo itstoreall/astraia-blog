@@ -1,0 +1,5 @@
+@import "../../styles/_mixins.scss";
+
+h1.title {
+  @include logo(18px);
+}
