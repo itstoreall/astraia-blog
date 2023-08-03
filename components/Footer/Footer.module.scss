@@ -3,8 +3,6 @@
 @import "../../styles/_mixins.scss";
 
 .footer {
-  position: absolute;
-  bottom: 0;
   display: flex;
   width: 100%;
   height: $footerHeight;
@@ -31,7 +29,11 @@
           justify-content: center;
 
           .logoLink {
+            display: flex;
+            align-items: center;
+            @include logo(15px, 3px);
             color: inherit;
+            // background-color: teal;
 
             &:hover {
               color: var(--button);
@@ -39,7 +41,7 @@
           }
 
           .copyrightIcon {
-            margin: 0 5px;
+            margin: 0 7px 0 5px;
           }
         }
       }
