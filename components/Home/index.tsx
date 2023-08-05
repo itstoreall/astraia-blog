@@ -1,18 +1,14 @@
-import Image from "next/image";
 import s from "./index.module.scss";
 import Title from "../Title";
+import ArticleImage from "../Image/ImageHandler";
 
 const HomeContent = () => {
   return (
     <div className={s.home}>
       <Title tag={"h2"} text={"Духовное саморазвитие"} />
-      {/* <Image
-        src={setImageSrc("")}
-        unoptimized
-        alt="Uploaded 3"
-        width={width}
-        height={height}
-      /> */}
+
+      <ArticleImage cid={""} />
+
       <article className={s.article}>
         <p>
           Добро пожаловать на сайт Astraia, сайт о духовном саморазвитии! Здесь

@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import services from "@/services";
 import s from "../page.module.scss";
-// import Title from "@/components/Title";
 import ArticleList from "@/components/Articles/List/List";
 
 export const metadata: Metadata = {
@@ -16,7 +15,6 @@ const Articles = async () => {
 
   return (
     <div className={s.content}>
-      {/* <Title tag={"h2"} text={"Articles!"} /> */}
       <ArticleList articles={articles} />
     </div>
   );
