@@ -13,15 +13,14 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: calc(100% - 1px);
-      border-top: 1px solid var(--middleGrey);
+      height: 100%;
 
       & > div:first-child {
         margin-bottom: 20px;
       }
 
       .copyrightBlock {
-        font-size: 15px;
+        font-size: $footerCopyrightFontSize;
         color: var(--middleGrey);
 
         .copyright {
@@ -31,7 +30,7 @@
           .logoLink {
             display: flex;
             align-items: center;
-            @include logo(15px, 3px);
+            @include logo($footerCopyrightFontSize, 3px);
             color: inherit;
             // background-color: teal;
 

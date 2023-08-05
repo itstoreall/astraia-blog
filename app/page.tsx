@@ -1,11 +1,18 @@
 // import Image from "next/image";
+import { Metadata } from "next";
 import Title from "@/components/Title/Title";
-import styles from "./page.module.scss";
+import s from "./page.module.scss";
+import HomeContent from "@/components/Home";
+
+export const metadata: Metadata = {
+  title: "Astraia",
+  description: "Astraia - статьи про духовное саморазвитие",
+};
 
 const Home = () => {
   return (
-    <div className={styles.main}>
-      <Title tag={"h2"} text={"Home"} />
+    <div className={s.content}>
+      <HomeContent />
     </div>
   );
 };
