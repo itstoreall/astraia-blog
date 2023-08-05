@@ -2,11 +2,16 @@
 @import "../styles/_mixins.scss";
 
 .content {
-  padding: 30px;
+  padding: 20px 0;
   background-color: palevioletred;
 
-  @include maxWidth($tablet - 1) {
+  @include minWidth($tablet) {
     // background-color: yellowgreen;
-    padding: 20px 0;
+    padding: 30px 0;
+  }
+
+  @include minWidth($desktop) {
+    // background-color: yellowgreen;
+    padding: 30px;
   }
 }
