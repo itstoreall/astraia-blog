@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { ThemeToggleProps } from "@/interfaces/theme";
+import { ThemeToggleProps } from "@/interfaces";
 import s from "./ThemeToggle.module.scss";
 
 const ThemeToggle: FC<ThemeToggleProps> = ({ theme, setTheme }) => {

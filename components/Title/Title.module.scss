@@ -3,3 +3,9 @@
 h1.title {
   @include logo(18px);
 }
+
+h3.title {
+  &.card {
+    color: blue;
+  }
+}

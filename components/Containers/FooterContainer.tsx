@@ -1,7 +1,7 @@
-import { ReactNode } from "react";
+import { IContainerProps } from "@/interfaces";
 import s from "./Container.module.scss";
 
-const FooterContainer = ({ children }: { children: ReactNode }) => {
+const FooterContainer = ({ children }: IContainerProps) => {
   return <div className={s.footerContainer}>{children}</div>;
 };
 
