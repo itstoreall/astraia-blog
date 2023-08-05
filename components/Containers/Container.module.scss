@@ -12,12 +12,7 @@
 .mainContainer {
   padding: $headerHeight 0 0 0;
   margin: 0 auto;
-  background-color: teal;
-
-  @include maxWidth($tablet - 1) {
-    // background-color: yellowgreen;
-    max-width: $mobile + 200;
-  }
+  // background-color: teal;
 
   @include minWidth($tablet) {
     // background-color: yellow;
@@ -25,19 +20,31 @@
   }
 
   @include minWidth($desktop) {
-    // background-color: pink;
     max-width: $desktop;
   }
 }
 
 .blockContainer {
   margin: 0 auto;
-  width: 92%;
+
+  @include maxWidth($tablet - 1) {
+    width: 92%;
+  }
+
+  @include minWidth($tablet) {
+    width: 710px;
+  }
+
+  @include minWidth($desktop) {
+    width: 900px;
+  }
 }
 
 .cardContainer {
-  margin: 0 auto;
-  width: 92%;
+  @include maxWidth($tablet - 1) {
+    margin: 0 auto;
+    width: 92%;
+  }
 }
 
 .footerContainer {

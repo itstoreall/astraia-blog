@@ -3,15 +3,9 @@
 
 .content {
   padding: 20px 0;
-  background-color: palevioletred;
+  // background-color: palevioletred;
 
   @include minWidth($tablet) {
-    // background-color: yellowgreen;
     padding: 30px 0;
-  }
-
-  @include minWidth($desktop) {
-    // background-color: yellowgreen;
-    padding: 30px;
   }
 }
