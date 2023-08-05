@@ -5,33 +5,47 @@
   margin: 0;
   padding: 0;
 
-  .item {
+  @include minWidth($tablet) {
     display: flex;
-    background-color: teal;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 710px;
+    // background-color: red;
+  }
 
-    &:not(:last-child) {
+  @include minWidth($desktop) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 900px;
+    // background-color: red;
+  }
+
+  .item {
+    // background-color: teal;
+
+    @include maxWidth($tablet - 1) {
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+
+    &:not(:last-child, :nth-last-child(2)) {
       margin-bottom: 30px;
     }
 
     .card {
-      // margin: 0 auto;
-      // width: 92%;
-
-      // height: 100px;
-      background-color: pink;
+      // background-color: pink;
 
       .thumb {
-        // width: calc(100% - 30px);
         @include flexXY(center, center);
-        // @include marginB(10px);
         overflow: hidden;
       }
 
       .meta {
-        // padding: 20px;
-
         .description {
-          color: greenyellow;
+          // color: greenyellow;
         }
       }
     }

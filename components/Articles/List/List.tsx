@@ -14,7 +14,11 @@ const ArticleList = ({ articles }: { articles: IArticle[] }) => {
             <div className={s.card}>
               <CardContainer>
                 <div className={s.thumb}>
-                  <ImageHandler cid={art.ipfs} alt={art.title} />
+                  <ImageHandler
+                    cid={art.ipfs}
+                    alt={art.title}
+                    size={"halved"}
+                  />
                 </div>
                 <div className={s.meta}>
                   <Title tag={"h3"} text={art.title} style={"card"} />

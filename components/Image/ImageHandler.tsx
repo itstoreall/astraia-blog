@@ -4,19 +4,35 @@ import useViewport from "@/hooks/useViewport";
 import useProportion from "@/hooks/useProportion";
 import { WEB3_STORAGE } from "@/constants";
 import defaultImage from "@/assets/images/defaultImage.jpg";
-import { MOBILE } from "@/styles/vars";
+// import { MOBILE } from "@/styles/vars";
+
+export interface IImageHandlerProps {
+  cid: string;
+  alt: string;
+  size: string;
+}
 
 const ipfs = WEB3_STORAGE;
 
 const setImageSrc = (cid: string) =>
   cid ? `https://${cid}.${ipfs}` : defaultImage;
 
-const ImageHandler = ({ cid, alt }: { cid: string; alt: string }) => {
+const ImageHandler = ({ cid, alt, size }: IImageHandlerProps) => {
+  const isFull = () => size === "full";
+
   const { viewport } = useViewport();
   const { width, height } = useProportion(
     900,
     450,
-    viewport === "tablet" ? 768 : viewport === "desktop" ? 900 : MOBILE + 200
+    viewport === "tablet"
+      ? isFull()
+        ? 786
+        : 340
+      : viewport === "desktop"
+      ? isFull()
+        ? 900
+        : 436
+      : 900
   );
 
   return (
