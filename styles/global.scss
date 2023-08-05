@@ -24,10 +24,13 @@ h2,
 h3 {
   margin: 0;
   padding: 0;
+  color: $middleGrey;
+  transition: color 0.4s ease;
 }
 
 p {
   margin: 0;
+  color: $middleGrey;
 }
 
 button {
@@ -37,6 +40,7 @@ button {
 
 a {
   display: block;
+  color: $middleGrey;
 }
 
 img {
@@ -58,17 +62,26 @@ code {
 
 .globalWrapper {
   min-width: 100%;
-  min-height: 100vh;
+  // background-color: green;
 }
 
 .main {
+  margin: 0 auto;
+  max-width: $max;
   min-height: 100vh;
+  // background-color: blue;
 }
 
 [data-theme="light"] body {
   background-color: $light;
   transition: $s04;
   color: $dark;
+
+  h1,
+  h2,
+  h3 {
+    color: $dark;
+  }
 
   a {
     color: $dark;
@@ -79,6 +92,12 @@ code {
   background-color: $dark;
   transition: $s04;
   color: $light;
+
+  h1,
+  h2,
+  h3 {
+    color: $light;
+  }
 
   a {
     color: $light;

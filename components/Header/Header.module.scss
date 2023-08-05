@@ -3,20 +3,18 @@
 @import "../../styles/_mixins.scss";
 
 .header {
-  position: absolute;
-  top: 0;
-  display: flex;
-  width: 100%;
-  height: $headerHeight;
+  @include themeHandler() {
+    position: fixed;
+    width: 100%;
+    background-color: var(--background);
+    transition: background-color 0.4s ease;
 
-  .content {
-    @include themeHandler() {
+    .content {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0 10px 0 20px;
-      height: calc(100% - $borderBottom);
-      border-bottom: $borderBottom solid var(--middleGrey);
+      padding: 0 20px;
+      height: 100%;
     }
   }
 }

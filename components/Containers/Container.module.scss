@@ -1,18 +1,33 @@
 @import "../../styles/vars.scss";
+@import "../../styles/_mixins.scss";
 
 .headerContainer {
   margin: 0 auto;
   width: 100%;
   max-width: $max;
+  height: $headerHeight;
   // background-color: palevioletred;
 }
 
 .mainContainer {
   padding: $headerHeight 0 0 0;
   margin: 0 auto;
-  width: 100%;
-  max-width: $max;
-  // background-color: pink;
+  background-color: teal;
+
+  @include maxWidth($tablet - 1) {
+    // background-color: yellowgreen;
+    max-width: $mobile + 200;
+  }
+
+  @include minWidth($tablet) {
+    // background-color: yellow;
+    max-width: $tablet;
+  }
+
+  @include minWidth($desktop) {
+    // background-color: pink;
+    max-width: $desktop;
+  }
 }
 
 .footerContainer {

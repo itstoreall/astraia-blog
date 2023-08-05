@@ -1,11 +1,12 @@
 import { Metadata } from "next";
 import services from "@/services";
-import Title from "@/components/Title";
-import ArticleList from "@/components/Articles/ArticleList";
+import s from "../page.module.scss";
+// import Title from "@/components/Title";
+import ArticleList from "@/components/Articles/List/List";
 
 export const metadata: Metadata = {
-  title: "Astraia articles",
-  description: "Astraia blog - articles",
+  title: "Статьи про духовное саморазвитие",
+  description: "Astraia blog - статьи про духовное саморазвитие",
 };
 
 const Articles = async () => {
@@ -14,10 +15,10 @@ const Articles = async () => {
   if (!articles?.length) return <p>no articles</p>;
 
   return (
-    <main>
-      <Title tag={"h2"} text={"Articles!"} />
+    <div className={s.content}>
+      {/* <Title tag={"h2"} text={"Articles!"} /> */}
       <ArticleList articles={articles} />
-    </main>
+    </div>
   );
 };
 

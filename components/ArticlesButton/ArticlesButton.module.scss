@@ -5,10 +5,6 @@
 // ----------- List
 
 .articlesButtonWrap {
-  position: fixed;
-  top: 5px;
-  right: 5px;
-
   @include themeHandler() {
     display: inline-block;
     padding: 4px;
