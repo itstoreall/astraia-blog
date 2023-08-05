@@ -11,7 +11,7 @@ const ipfs = WEB3_STORAGE;
 const setImageSrc = (cid: string) =>
   cid ? `https://${cid}.${ipfs}` : defaultImage;
 
-const ImageHandler = ({ cid }: { cid: string }) => {
+const ImageHandler = ({ cid, alt }: { cid: string; alt: string }) => {
   const { viewport } = useViewport();
   const { width, height } = useProportion(
     900,
@@ -25,7 +25,7 @@ const ImageHandler = ({ cid }: { cid: string }) => {
         <Image
           src={setImageSrc(cid)}
           unoptimized
-          alt="Uploaded 3"
+          alt={alt}
           width={width}
           height={height}
         />

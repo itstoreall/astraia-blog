@@ -16,7 +16,7 @@ export const metadata: Metadata = {
         url: `${SITE_DOMAIN}/_next/static/media/defaultImage.537bc5b3.jpg`,
         width: 1200,
         height: 675,
-        alt: "вселенная и тонкий мир",
+        alt: "Вселенная и тонкий мир",
       },
     ],
     type: "website",

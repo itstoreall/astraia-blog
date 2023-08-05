@@ -1,15 +1,10 @@
-import { FC } from "react";
+import { TitleType } from "@/types";
 import s from "./Title.module.scss";
 
-interface TitleProps {
-  tag?: keyof JSX.IntrinsicElements;
-  text: string;
-}
-
-const Title: FC<TitleProps> = ({ tag, text }) => {
+const Title: TitleType = ({ tag, text, style }) => {
   const Tag = tag || "h1";
 
-  return <Tag className={s.title}>{text}</Tag>;
+  return <Tag className={`${s.title} ${s[style ? style : ""]}`}>{text}</Tag>;
 };
 
 export default Title;

@@ -1,11 +1,8 @@
 "use client";
 import { FC, useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-// import { THEME_BY_DEFAULT } from "@/constants";
 import ThemeToggle from "./ThemeToggle";
 import { getCurrentTheme } from "@/utils";
-
-// const defaultTheme = THEME_BY_DEFAULT;
 
 const ThemeSwitcher: FC = () => {
   const [mounted, setMounted] = useState(false);
@@ -18,7 +15,6 @@ const ThemeSwitcher: FC = () => {
   if (!mounted) return null;
 
   const currentTheme = getCurrentTheme(theme);
-  // theme === "light" || theme === "dark" ? theme : defaultTheme;
 
   return (
     <div>
