@@ -1,17 +1,21 @@
 import { Metadata } from "next";
+import s from "../../page.module.scss";
 import services from "@/services";
-import Title from "@/components/Title";
+import ArticleDetails from "@/components/Articles/Details";
 
 interface IProps {
   params: { id: string };
 }
 
-export const generateMetadata = async ({
-  params: { id },
-}: IProps): Promise<Metadata> => {
+type GenMetadata = ({ params: { id } }: IProps) => Promise<Metadata>;
+
+export const generateMetadata: GenMetadata = async ({ params: { id } }) => {
   const article = await services.getArticle(id);
 
-  return { title: article.title };
+  return {
+    title: article.title,
+    description: article.description,
+  };
 };
 
 const Article = async ({ params: { id } }: IProps) => {
@@ -20,9 +24,10 @@ const Article = async ({ params: { id } }: IProps) => {
   if (!article) return <p>no article</p>;
 
   return (
-    <main>
-      <Title tag={"h2"} text={`Article ${article.title} ${article.id}`} />
-    </main>
+    <div className={s.content}>
+      <ArticleDetails article={article} />
+      {/* <Title tag={"h2"} text={`Article ${article.title} ${article.id}`} /> */}
+    </div>
   );
 };
 
