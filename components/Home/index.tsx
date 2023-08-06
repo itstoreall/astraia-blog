@@ -1,16 +1,20 @@
 import s from "./index.module.scss";
 import Title from "../Title";
 import ArticleImage from "../Image/ImageHandler";
-import BlockContainer from "../Containers/BlockContainer";
+import InnerContainer from "../Containers/InnerContainer";
 
 const HomeContent = () => {
   return (
-    <div className={s.home}>
-      <BlockContainer>
+    <InnerContainer>
+      <div className={s.home}>
         <Title tag={"h2"} text={"Духовное саморазвитие"} />
 
         <div className={s.thumb}>
-          <ArticleImage cid={""} alt={"Вселенная и тонкий мир"} size={"full"} />
+          <ArticleImage
+            cid={""}
+            alt={"Вселенная и тонкий мир"}
+            grayscale={50}
+          />
         </div>
 
         <article className={s.article}>
@@ -35,8 +39,8 @@ const HomeContent = () => {
             себя.
           </p>
         </article>
-      </BlockContainer>
-    </div>
+      </div>
+    </InnerContainer>
   );
 };
 

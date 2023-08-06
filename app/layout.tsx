@@ -23,9 +23,9 @@ export default function RootLayout({ children }: IRootLayoutProps) {
           <div className="globalWrapper">
             <Header />
             <main className="main">
-              {/* <ArticlesButton /> */}
               <MainContainer>{children}</MainContainer>
             </main>
+            {/* <ArticlesButton /> */}
             <Footer />
           </div>
         </NextThemeProvider>

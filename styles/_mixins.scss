@@ -165,6 +165,13 @@
 
 // ------- Custom
 
+@mixin lineClamp($lines: 2) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+}
+
 @mixin crumbs() {
   font-size: 14px;
   font-weight: 400;

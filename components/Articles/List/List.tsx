@@ -1,35 +1,42 @@
+"use client";
+import { useTheme } from "next-themes";
 import Link from "next/link";
+import { getCurrentTheme } from "@/utils";
 import { IArticle } from "@/interfaces";
 import s from "./List.module.scss";
+import InnerContainer from "@/components/Containers/InnerContainer";
 import ImageHandler from "@/components/Image/ImageHandler";
 import Title from "@/components/Title";
-import CardContainer from "@/components/Containers/CardContainer";
 
 const ArticleList = ({ articles }: { articles: IArticle[] }) => {
+  const { theme } = useTheme();
+  const currentTheme = getCurrentTheme(theme);
+  const imgFilter = () => (theme === "dark" ? 50 : 0);
+
   return (
-    <ul className={s.list}>
-      {articles.map((art: IArticle) => (
-        <li key={art.id} className={s.item}>
-          <Link href={`/articles/${art.id}`}>
-            <div className={s.card}>
-              <CardContainer>
+    <InnerContainer>
+      <ul className={`${s.list} ${s[currentTheme]}`}>
+        {articles.map((art: IArticle) => (
+          <li key={art.id} className={s.item}>
+            <Link href={`/articles/${art.id}`}>
+              <div className={s.card}>
                 <div className={s.thumb}>
                   <ImageHandler
                     cid={art.ipfs}
                     alt={art.title}
-                    size={"halved"}
+                    grayscale={imgFilter()}
                   />
                 </div>
                 <div className={s.meta}>
                   <Title tag={"h3"} text={art.title} style={"card"} />
                   <p className={s.description}>{art.description}</p>
                 </div>
-              </CardContainer>
-            </div>
-          </Link>
-        </li>
-      ))}
-    </ul>
+              </div>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </InnerContainer>
   );
 };
 
