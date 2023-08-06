@@ -8,7 +8,6 @@ import Copyright from "./Copyright";
 
 const Footer = () => {
   const { theme } = useTheme();
-
   const currentTheme = getCurrentTheme(theme);
 
   return (

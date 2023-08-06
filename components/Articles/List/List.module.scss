@@ -1,51 +1,87 @@
 @import "../../../styles/_mixins.scss";
 
 .list {
-  list-style: none;
-  margin: 0;
-  margin-bottom: -20px;
-  padding: 0;
-
-  @include minWidth($tablet) {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
-  .item {
-    // background-color: palevioletred;
-    margin-bottom: 20px;
+  @include themeHandler() {
+    list-style: none;
+    margin: 0;
+    margin-bottom: -20px;
+    padding: 0;
 
     @include minWidth($tablet) {
-      width: 49%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
     }
 
-    @include minWidth($desktop) {
-      width: 32%;
+    .item {
+      background-color: var(--background-hover);
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      transition: box-shadow 0.4s ease;
+
+      &:hover {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+
+      @include minWidth($tablet) {
+        width: 49%;
+      }
+
+      @include minWidth($desktop) {
+        width: 32%;
+      }
+
+      .card {
+        .thumb {
+          img {
+            border-radius: 6px 6px 0 0;
+          }
+        }
+        .meta {
+          padding: 15px 15px 20px;
+
+          h3 {
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: var(--text);
+            @include lineClamp(1);
+          }
+
+          .description {
+            color: var(--text-light);
+            font-size: 13px;
+            line-height: 1.3;
+            @include lineClamp(2);
+
+            /*
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            -webkit-text-overflow: ellipsis;
+            -ms-text-overflow: ellipsis;
+            */
+          }
+        }
+      }
+
+      //   &:not(:last-child) {
+      //     margin-bottom: 30px;
+      //   }
+      // }
+
+      // &:not(:last-child, :nth-last-child(2)) {
+      //   margin-bottom: 30px;
+      // }
+
+      // .card {
+      //   // background-color: pink;
+
+      //   .thumb {
+      //     @include flexXY(center, center);
+      //     overflow: hidden;
+      //   }
+      // }
     }
-
-    //   &:not(:last-child) {
-    //     margin-bottom: 30px;
-    //   }
-    // }
-
-    // &:not(:last-child, :nth-last-child(2)) {
-    //   margin-bottom: 30px;
-    // }
-
-    // .card {
-    //   // background-color: pink;
-
-    //   .thumb {
-    //     @include flexXY(center, center);
-    //     overflow: hidden;
-    //   }
-
-    //   .meta {
-    //     .description {
-    //       // color: greenyellow;
-    //     }
-    //   }
-    // }
   }
 }
