@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import useViewport from "./useViewport";
 
 type UseProportion = (
   w: number,
@@ -24,6 +25,8 @@ const useProportion: UseProportion = (w, h, max) => {
     height: 0,
   });
 
+  const { landscape } = useViewport();
+
   useEffect(() => {
     const handleResize = () => {
       const newSize = calculateSize(w, h, max);
@@ -34,9 +37,10 @@ const useProportion: UseProportion = (w, h, max) => {
 
     window.addEventListener("resize", handleResize);
 
+    console.log(landscape);
     return () => window.removeEventListener("resize", handleResize);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [max]);
+  }, [max, landscape]);
 
   return { width: proportionalSize.width, height: proportionalSize.height };
 };
