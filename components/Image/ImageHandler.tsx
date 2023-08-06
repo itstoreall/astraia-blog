@@ -39,23 +39,44 @@ const ImageHandler = ({ cid, alt, size }: IImageHandlerProps) => {
       : 900
   );
 
+  // const { width, height } = useProportion(
+  //   900,
+  //   450,
+  //   viewport === "tablet"
+  //     ? isFull()
+  //       ? 786
+  //       : 340
+  //     : viewport === "desktop"
+  //     ? isFull()
+  //       ? 900
+  //       : 436
+  //     : 900
+  // );
+
   // useEffect(() => {}, [width, height, landscape]);
 
   console.log("width, height", width, height);
+
+  const getSize = () => {
+    return { width, height };
+  };
 
   return (
     <div>
       <div style={{ textAlign: "center" }}>{width}</div>
       <div style={{ textAlign: "center" }}>{height}</div>
       <div style={{ textAlign: "center" }}>{viewport}</div>
-      <div style={{ textAlign: "center" }}>{orientation}</div>
+      <div style={{ textAlign: "center" }}>
+        {1}
+        {orientation}
+      </div>
       {viewport && (
         <Image
           src={setImageSrc(cid)}
           unoptimized
           alt={alt}
-          width={width}
-          height={height}
+          width={getSize().width}
+          height={getSize().height}
         />
       )}
     </div>
