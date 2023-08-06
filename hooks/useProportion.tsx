@@ -45,7 +45,7 @@ const useProportion: UseProportion = (w, h, max) => {
   }, [max, orientation]);
 
   useEffect(() => {
-    orientation !== ornt && setOrientation(ornt);
+    setOrientation(ornt);
   }, [ornt]);
 
   return { width: proportionalSize.width, height: proportionalSize.height };
