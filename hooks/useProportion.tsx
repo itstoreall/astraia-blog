@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import useViewport from "./useViewport";
 
-type UseProportion = (
-  w: number,
-  h: number,
-  max: number
-) => { width: number; height: number };
+interface IProportionalState {
+  width: number;
+  height: number;
+}
+
+type UseProportion = (w: number, h: number, max: number) => IProportionalState;
 
 const calculateSize: UseProportion = (w, h, max) => {
   const targetAspectRatio = w / h;
@@ -20,12 +21,13 @@ const calculateSize: UseProportion = (w, h, max) => {
 };
 
 const useProportion: UseProportion = (w, h, max) => {
-  const [proportionalSize, setProportionalSize] = useState({
+  const [orientation, setOrientation] = useState<string>("");
+  const [proportionalSize, setProportionalSize] = useState<IProportionalState>({
     width: 0,
     height: 0,
   });
 
-  const { landscape } = useViewport();
+  const { orientation: ornt } = useViewport();
 
   useEffect(() => {
     const handleResize = () => {
@@ -37,10 +39,14 @@ const useProportion: UseProportion = (w, h, max) => {
 
     window.addEventListener("resize", handleResize);
 
-    console.log(landscape);
+    // console.log(ornt);
     return () => window.removeEventListener("resize", handleResize);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [max, landscape]);
+  }, [max, orientation]);
+
+  useEffect(() => {
+    orientation !== ornt && setOrientation(ornt);
+  }, [ornt]);
 
   return { width: proportionalSize.width, height: proportionalSize.height };
 };
