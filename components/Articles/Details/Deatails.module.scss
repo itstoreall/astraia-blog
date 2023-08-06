@@ -1,3 +1,116 @@
+@import "../../../styles/mixins";
+@import "../../../theme/index.scss";
+
 .details {
-  background-color: yellowgreen;
+  // background-color: yellowgreen;
+  @include themeHandler() {
+    .articleDetails {
+      @include marginB(80px);
+
+      h2 {
+        @include marginB(20px);
+        @include fontSize(28px);
+        transition: color 0.4s ease;
+
+        @include minWidth($tablet) {
+          @include width(80%);
+          @include fontSize(32px);
+        }
+
+        @include minWidth($desktop) {
+          @include width(80%);
+          @include fontSize(36px);
+        }
+      }
+
+      .description {
+        @include marginB(20px);
+        line-height: 1.4;
+        color: var(--text-light);
+        transition: 0.4s ease;
+
+        @include minWidth($tablet) {
+          @include width(90%);
+          @include fontSize(18px);
+        }
+
+        @include minWidth($desktop) {
+          @include width(90%);
+          @include fontSize(20px);
+        }
+      }
+
+      .publicationDate {
+        @include flexX(space-between);
+        @include marginB(20px);
+        @include fontSize(14px);
+        color: $middleGrey;
+
+        @include minWidth($tablet) {
+          @include flexX(flex-start);
+        }
+
+        .author {
+          @include minWidth($tablet) {
+            @include marginR(40px);
+          }
+        }
+
+        .timestamp {
+        }
+      }
+
+      .thumb {
+        @include flexXY(center, center);
+        @include marginB(10px);
+        overflow: hidden;
+      }
+
+      .id {
+        @include fontSize(12px);
+        @include marginB(30px);
+        color: $middleGrey;
+      }
+
+      .articleElements {
+        .subTitle {
+          // line-height: 3.5;
+          transition: 0.4s ease;
+
+          &:not(:last-child) {
+            @include marginB(20px);
+            @include paddingT(10px);
+          }
+
+          @include minWidth($tablet) {
+            @include fontSize(22px);
+          }
+
+          @include minWidth($desktop) {
+            @include fontSize(24px);
+          }
+        }
+
+        .paragraph {
+          color: var(--text-light);
+          transition: 0.4s ease;
+
+          &:not(:last-child) {
+            @include marginB(30px);
+          }
+
+          @include fontSize(14px);
+          line-height: 1.4;
+
+          @include minWidth($tablet) {
+            @include fontSize(16px);
+          }
+
+          @include minWidth($desktop) {
+            @include fontSize(18px);
+          }
+        }
+      }
+    }
+  }
 }
