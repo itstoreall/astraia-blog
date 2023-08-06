@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import useViewport from "./useViewport";
+// import useViewport from "./useViewport";
 
 interface IProportionalState {
   width: number;
@@ -21,13 +21,13 @@ const calculateSize: UseProportion = (w, h, max) => {
 };
 
 const useProportion: UseProportion = (w, h, max) => {
-  const [orientation, setOrientation] = useState<string>("");
+  // const [orientation, setOrientation] = useState<string>("");
   const [proportionalSize, setProportionalSize] = useState<IProportionalState>({
     width: 0,
     height: 0,
   });
 
-  const { orientation: ornt } = useViewport();
+  // const { orientation: ornt } = useViewport();
 
   useEffect(() => {
     const handleResize = () => {
@@ -42,11 +42,11 @@ const useProportion: UseProportion = (w, h, max) => {
     // console.log(ornt);
     return () => window.removeEventListener("resize", handleResize);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [max, orientation]);
+  }, [max]);
 
-  useEffect(() => {
-    setOrientation(ornt);
-  }, [ornt]);
+  // useEffect(() => {
+  //   setOrientation(ornt);
+  // }, [ornt]);
 
   return { width: proportionalSize.width, height: proportionalSize.height };
 };
