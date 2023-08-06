@@ -10,7 +10,8 @@
 }
 
 .mainContainer {
-  padding: $headerHeight 0 0 0;
+  position: relative;
+  // padding: $headerHeight 0 0 0;
   margin: 0 auto;
   // background-color: yellow;
 
@@ -25,6 +26,15 @@
   }
 }
 
+.fixedContainer {
+  position: fixed;
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  max-width: $max;
+  z-index: 2;
+}
+
 .innerContainer {
   margin: 0 auto;
   width: 94%;
@@ -33,23 +43,6 @@
     width: 96%;
   }
 }
-
-// .articlesContainer,
-// .homeContainer {
-//   margin: 0 auto;
-
-//   @include maxWidth($tablet - 1) {
-//     width: 92%;
-//   }
-
-//   @include minWidth($tablet) {
-//     width: 710px;
-//   }
-
-//   @include minWidth($desktop) {
-//     width: 900px;
-//   }
-// }
 
 .cardContainer {
   @include maxWidth($tablet - 1) {

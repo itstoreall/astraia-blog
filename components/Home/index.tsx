@@ -10,7 +10,11 @@ const HomeContent = () => {
         <Title tag={"h2"} text={"Духовное саморазвитие"} />
 
         <div className={s.thumb}>
-          <ArticleImage cid={""} alt={"Вселенная и тонкий мир"} size={"full"} />
+          <ArticleImage
+            cid={""}
+            alt={"Вселенная и тонкий мир"}
+            grayscale={50}
+          />
         </div>
 
         <article className={s.article}>

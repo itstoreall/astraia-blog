@@ -15,14 +15,13 @@ const Header = () => {
   return (
     <header className={`${s.header} ${s[currentTheme]}`}>
       <HeaderContainer>
+        <ArticlesButton />
         <div className={s.content}>
-          <nav>
+          <nav className={s.logo}>
             <Link href={"/"}>
               <Title text={"Astraia"} />
             </Link>
           </nav>
-
-          <ArticlesButton />
         </div>
       </HeaderContainer>
     </header>

@@ -6,7 +6,7 @@ import defaultImage from "@/assets/images/defaultImage.jpg";
 export interface IImageHandlerProps {
   cid: string;
   alt: string;
-  size: string;
+  grayscale: number;
 }
 
 const ipfs = WEB3_STORAGE;
@@ -14,7 +14,7 @@ const ipfs = WEB3_STORAGE;
 const setImageSrc = (cid: string) =>
   cid ? `https://${cid}.${ipfs}` : defaultImage;
 
-const ImageHandler = ({ cid, alt, size }: IImageHandlerProps) => {
+const ImageHandler = ({ cid, alt, grayscale }: IImageHandlerProps) => {
   return (
     <Image
       src={setImageSrc(cid)}
@@ -23,10 +23,11 @@ const ImageHandler = ({ cid, alt, size }: IImageHandlerProps) => {
       width={900}
       height={450}
       style={{
+        // position: "relative",
         width: "100%",
         height: "auto",
-        objectFit: "contain",
-        // position: "relative",
+        // objectFit: "contain",
+        filter: `grayscale(${grayscale}%)`,
       }}
     />
   );
