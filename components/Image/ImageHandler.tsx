@@ -68,17 +68,28 @@ const ImageHandler = ({ cid, alt, size }: IImageHandlerProps) => {
       <div style={{ textAlign: "center" }}>{height}</div>
       <div style={{ textAlign: "center" }}>{viewport}</div>
       <div style={{ textAlign: "center" }}>
-        {4}
+        {5}
         {orientation}
       </div>
       {viewport && (
+        // <div style={{ width: "200px", height: "300px" }}>
         <Image
           src={setImageSrc(cid)}
           unoptimized
           alt={alt}
-          width={getSize().width}
-          height={getSize().height}
+          // fill={true}
+          // width={getSize().width}
+          // height={getSize().height}
+          width={900}
+          height={450}
+          style={{
+            width: "100%",
+            height: "auto",
+            objectFit: "contain",
+            position: "relative",
+          }}
         />
+        // </div>
       )}
     </div>
   );
