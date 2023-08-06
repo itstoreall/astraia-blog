@@ -3,51 +3,49 @@
 .list {
   list-style: none;
   margin: 0;
+  margin-bottom: -20px;
   padding: 0;
 
   @include minWidth($tablet) {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 0 auto;
-    width: 710px;
-    // background-color: red;
-  }
-
-  @include minWidth($desktop) {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 900px;
-    // background-color: red;
   }
 
   .item {
-    // background-color: teal;
+    // background-color: palevioletred;
+    margin-bottom: 20px;
 
-    @include maxWidth($tablet - 1) {
-      &:not(:last-child) {
-        margin-bottom: 30px;
-      }
+    @include minWidth($tablet) {
+      width: 49%;
     }
 
-    &:not(:last-child, :nth-last-child(2)) {
-      margin-bottom: 30px;
+    @include minWidth($desktop) {
+      width: 32%;
     }
 
-    .card {
-      // background-color: pink;
+    //   &:not(:last-child) {
+    //     margin-bottom: 30px;
+    //   }
+    // }
 
-      .thumb {
-        @include flexXY(center, center);
-        overflow: hidden;
-      }
+    // &:not(:last-child, :nth-last-child(2)) {
+    //   margin-bottom: 30px;
+    // }
 
-      .meta {
-        .description {
-          // color: greenyellow;
-        }
-      }
-    }
+    // .card {
+    //   // background-color: pink;
+
+    //   .thumb {
+    //     @include flexXY(center, center);
+    //     overflow: hidden;
+    //   }
+
+    //   .meta {
+    //     .description {
+    //       // color: greenyellow;
+    //     }
+    //   }
+    // }
   }
 }

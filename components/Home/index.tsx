@@ -1,12 +1,12 @@
 import s from "./index.module.scss";
 import Title from "../Title";
 import ArticleImage from "../Image/ImageHandler";
-import BlockContainer from "../Containers/BlockContainer";
+import InnerContainer from "../Containers/InnerContainer";
 
 const HomeContent = () => {
   return (
-    <div className={s.home}>
-      <BlockContainer>
+    <InnerContainer>
+      <div className={s.home}>
         <Title tag={"h2"} text={"Духовное саморазвитие"} />
 
         <div className={s.thumb}>
@@ -35,8 +35,8 @@ const HomeContent = () => {
             себя.
           </p>
         </article>
-      </BlockContainer>
-    </div>
+      </div>
+    </InnerContainer>
   );
 };
 
