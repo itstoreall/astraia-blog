@@ -28,17 +28,9 @@ const ImageHandler = ({ cid, alt, size }: IImageHandlerProps) => {
   const { width, height } = useProportion(
     900,
     450,
-    viewport === "mobile"
+    viewport === "tablet"
       ? isFull()
-        ? orientation === "portrait"
-          ? 786
-          : 787
-        : 340
-      : viewport === "tablet"
-      ? isFull()
-        ? orientation === "portrait"
-          ? 786
-          : 787
+        ? 786
         : 340
       : viewport === "desktop"
       ? isFull()
@@ -75,17 +67,29 @@ const ImageHandler = ({ cid, alt, size }: IImageHandlerProps) => {
       <div style={{ textAlign: "center" }}>{height}</div>
       <div style={{ textAlign: "center" }}>{viewport}</div>
       <div style={{ textAlign: "center" }}>
-        {1}
+        {2}
         {orientation}
       </div>
       {viewport && (
-        <Image
-          src={setImageSrc(cid)}
-          unoptimized
-          alt={alt}
-          width={getSize().width}
-          height={getSize().height}
-        />
+        <>
+          {orientation === "portrait" ? (
+            <Image
+              src={setImageSrc(cid)}
+              unoptimized
+              alt={alt}
+              width={getSize().width}
+              height={getSize().height}
+            />
+          ) : (
+            <Image
+              src={setImageSrc(cid)}
+              unoptimized
+              alt={alt}
+              width={getSize().width}
+              height={getSize().height}
+            />
+          )}
+        </>
       )}
     </div>
   );
