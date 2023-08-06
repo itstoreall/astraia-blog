@@ -82,7 +82,9 @@ const ImageHandler = ({ cid, alt, size }: IImageHandlerProps) => {
             />
           ) : (
             <Image
-              src={setImageSrc(cid)}
+              src={setImageSrc(
+                "bafybeihcbpo2srkjzr7tembdkkrqlarhapx57vdwpxa7glvgstivggehxq"
+              )}
               unoptimized
               alt={alt}
               width={getSize().width}
