@@ -4,7 +4,7 @@ import { DESKTOP, TABLET } from "@/styles/vars";
 
 const useViewport = (isValue?: boolean, setIsValue?: (b: boolean) => void) => {
   const [viewport, setViewport] = useState<string>("");
-  const [landscape, setLandscape] = useState<string>("");
+  const [orientation, setOrientation] = useState<string>("");
 
   const getViewportSize = () =>
     typeof window !== "undefined"
@@ -18,7 +18,7 @@ const useViewport = (isValue?: boolean, setIsValue?: (b: boolean) => void) => {
   useEffect(() => {
     const handleResize = () => {
       setViewport(getViewportSize());
-      setLandscape(isLandscape() ? "landscape" : "portrait");
+      setOrientation(isLandscape() ? "landscape" : "portrait");
     };
 
     handleResize();
@@ -33,7 +33,7 @@ const useViewport = (isValue?: boolean, setIsValue?: (b: boolean) => void) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [viewport]);
 
-  return { viewport, landscape };
+  return { viewport, orientation };
 };
 
 export default useViewport;

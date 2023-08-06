@@ -24,7 +24,7 @@ const ImageHandler = ({ cid, alt, size }: IImageHandlerProps) => {
 
   const isFull = () => size === "full";
 
-  const { viewport, landscape } = useViewport();
+  const { viewport, orientation } = useViewport();
   const { width, height } = useProportion(
     900,
     450,
@@ -57,7 +57,7 @@ const ImageHandler = ({ cid, alt, size }: IImageHandlerProps) => {
       <div style={{ textAlign: "center" }}>{width}</div>
       <div style={{ textAlign: "center" }}>{height}</div>
       <div style={{ textAlign: "center" }}>{viewport}</div>
-      <div style={{ textAlign: "center" }}>{landscape}</div>
+      <div style={{ textAlign: "center" }}>{orientation}</div>
     </div>
   );
 };
