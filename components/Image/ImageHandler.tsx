@@ -20,7 +20,7 @@ const setImageSrc = (cid: string) =>
 const ImageHandler = ({ cid, alt, size }: IImageHandlerProps) => {
   const isFull = () => size === "full";
 
-  const { viewport } = useViewport();
+  const { viewport, landscape } = useViewport();
   const { width, height } = useProportion(
     900,
     450,
@@ -35,9 +35,11 @@ const ImageHandler = ({ cid, alt, size }: IImageHandlerProps) => {
       : 900
   );
 
+  // console.log("landscape", landscape);
+
   return (
     <>
-      {viewport && (
+      {viewport && landscape && (
         <Image
           src={setImageSrc(cid)}
           unoptimized
