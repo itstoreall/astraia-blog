@@ -12,33 +12,44 @@
 .mainContainer {
   padding: $headerHeight 0 0 0;
   margin: 0 auto;
-  // background-color: teal;
+  // background-color: yellow;
 
   @include minWidth($tablet) {
-    // background-color: yellow;
     max-width: $tablet;
+    // background-color: yellowgreen;
   }
 
   @include minWidth($desktop) {
     max-width: $desktop;
+    // background-color: green;
   }
 }
 
-.blockContainer {
+.innerContainer {
   margin: 0 auto;
-
-  @include maxWidth($tablet - 1) {
-    width: 92%;
-  }
+  width: 94%;
 
   @include minWidth($tablet) {
-    width: 710px;
-  }
-
-  @include minWidth($desktop) {
-    width: 900px;
+    width: 96%;
   }
 }
+
+// .articlesContainer,
+// .homeContainer {
+//   margin: 0 auto;
+
+//   @include maxWidth($tablet - 1) {
+//     width: 92%;
+//   }
+
+//   @include minWidth($tablet) {
+//     width: 710px;
+//   }
+
+//   @include minWidth($desktop) {
+//     width: 900px;
+//   }
+// }
 
 .cardContainer {
   @include maxWidth($tablet - 1) {

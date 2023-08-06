@@ -10,8 +10,6 @@ const ArticlesButton = () => {
 
   const pathname = usePathname();
 
-  console.log("pathname", pathname);
-
   const desc = {
     width: "29",
     height: "29",
