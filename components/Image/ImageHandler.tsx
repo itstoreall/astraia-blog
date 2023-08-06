@@ -41,10 +41,10 @@ const ImageHandler = ({ cid, alt, size }: IImageHandlerProps) => {
 
   // useEffect(() => {}, [width, height, landscape]);
 
-  // console.log("landscape", landscape);
+  console.log("width, height", width, height);
 
   return (
-    <>
+    <div>
       {viewport && (
         <Image
           src={setImageSrc(cid)}
@@ -54,7 +54,9 @@ const ImageHandler = ({ cid, alt, size }: IImageHandlerProps) => {
           height={height}
         />
       )}
-    </>
+      <div style={{ textAlign: "center" }}>{width}</div>
+      <div style={{ textAlign: "center" }}>{height}</div>
+    </div>
   );
 };
 
