@@ -1,9 +1,14 @@
+"use client";
 import s from "./index.module.scss";
+import { useTheme } from "next-themes";
 import Title from "../Title";
 import ArticleImage from "../Image/ImageHandler";
 import InnerContainer from "../Containers/InnerContainer";
 
 const HomeContent = () => {
+  const { theme } = useTheme();
+  const imgFilter = () => (theme === "dark" ? 50 : 0);
+
   return (
     <InnerContainer>
       <div className={s.home}>
@@ -13,7 +18,7 @@ const HomeContent = () => {
           <ArticleImage
             cid={""}
             alt={"Вселенная и тонкий мир"}
-            grayscale={50}
+            grayscale={imgFilter()}
           />
         </div>
 
