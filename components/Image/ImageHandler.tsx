@@ -28,9 +28,17 @@ const ImageHandler = ({ cid, alt, size }: IImageHandlerProps) => {
   const { width, height } = useProportion(
     900,
     450,
-    viewport === "tablet"
+    viewport === "mobile"
       ? isFull()
-        ? 786
+        ? orientation === "portrait"
+          ? 786
+          : 787
+        : 340
+      : viewport === "tablet"
+      ? isFull()
+        ? orientation === "portrait"
+          ? 786
+          : 787
         : 340
       : viewport === "desktop"
       ? isFull()
