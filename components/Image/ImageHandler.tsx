@@ -45,6 +45,10 @@ const ImageHandler = ({ cid, alt, size }: IImageHandlerProps) => {
 
   return (
     <div>
+      <div style={{ textAlign: "center" }}>{width}</div>
+      <div style={{ textAlign: "center" }}>{height}</div>
+      <div style={{ textAlign: "center" }}>{viewport}</div>
+      <div style={{ textAlign: "center" }}>{orientation}</div>
       {viewport && (
         <Image
           src={setImageSrc(cid)}
@@ -54,10 +58,6 @@ const ImageHandler = ({ cid, alt, size }: IImageHandlerProps) => {
           height={height}
         />
       )}
-      <div style={{ textAlign: "center" }}>{width}</div>
-      <div style={{ textAlign: "center" }}>{height}</div>
-      <div style={{ textAlign: "center" }}>{viewport}</div>
-      <div style={{ textAlign: "center" }}>{orientation}</div>
     </div>
   );
 };
