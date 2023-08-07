@@ -9,7 +9,10 @@
 
     @include minWidth($tablet) {
       @include flexWrap(wrap);
-      justify-content: space-between;
+
+      @include maxWidth($desktop - 1) {
+        justify-content: space-between;
+      }
     }
 
     .item {
@@ -29,6 +32,10 @@
 
       @include minWidth($desktop) {
         @include width(32%);
+
+        &:not(:nth-child(3n + 3)) {
+          @include marginR(2%);
+        }
       }
 
       .card {
