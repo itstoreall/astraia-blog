@@ -23,8 +23,8 @@ const ArticleDetails = ({ article }: { article: any }) => {
 
   const articleText = JSON.parse(article?.text).articleElements;
 
-  console.log("article.text", article);
-  console.log("articleText", articleText);
+  // console.log("article.text", article);
+  // console.log("articleText", articleText);
 
   return (
     <InnerContainer>
