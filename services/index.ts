@@ -5,6 +5,7 @@ import GET_ARTICLE_BY_ID from "@/gql/getArticleById";
 const getArticles = async () => {
   const { data } = await getClient().query({
     query: GET_ARTICLES,
+    variables: { blog: "astraia" },
     context: {
       fetchOptions: { cache: "no-store" },
     },
@@ -18,7 +19,7 @@ const getArticles = async () => {
 const getArticle = async (id: string) => {
   const { data } = await getClient().query({
     query: GET_ARTICLE_BY_ID,
-    variables: { id },
+    variables: { blog: "astraia", id },
     context: {
       fetchOptions: { cache: "no-store" },
     },

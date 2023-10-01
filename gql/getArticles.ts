@@ -1,8 +1,8 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 const GET_ARTICLES = gql`
-  query GetArticles {
-    articles {
+  query GetArticles($blog: String!) {
+    articles(blog: $blog) {
       id
       title
       description
@@ -17,3 +17,19 @@ const GET_ARTICLES = gql`
 `;
 
 export default GET_ARTICLES;
+
+/*
+query GetArticles {
+  articles {
+    id
+    title
+    description
+    text
+    author
+    ipfs
+    views
+    tags
+    timestamp
+  }
+}
+*/
