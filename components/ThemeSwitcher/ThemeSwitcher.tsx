@@ -2,7 +2,7 @@
 import { FC, useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import ThemeToggle from "./ThemeToggle";
-import { getCurrentTheme } from "@/utils";
+// import { getCurrentTheme } from "@/utils";
 
 const ThemeSwitcher: FC = () => {
   const [mounted, setMounted] = useState(false);
@@ -14,12 +14,10 @@ const ThemeSwitcher: FC = () => {
 
   if (!mounted) return null;
 
-  const currentTheme = getCurrentTheme(theme);
+  // const currentTheme = getCurrentTheme(theme);
 
   return (
-    <div>
-      <ThemeToggle theme={currentTheme} setTheme={setTheme} />
-    </div>
+    <div>{theme && <ThemeToggle theme={theme} setTheme={setTheme} />}</div>
   );
 };
 
