@@ -1,11 +1,15 @@
 "use client";
+import { useEffect } from "react";
 import { useTheme } from "next-themes";
-import s from "./Deatails.module.scss";
 import * as constants from "@/constants";
+import s from "./Deatails.module.scss";
 import Title from "../../Title";
 import InnerContainer from "@/components/Containers/InnerContainer";
 import ImageHandler from "@/components/Image/ImageHandler";
 import { getCurrentTheme } from "@/utils";
+import { IArticleDetailsProps } from "@/interfaces/articleDetails";
+
+const lsViewsKey = constants.LS_VIEWS_KEY;
 
 const convertDate = (timestamp: string) => {
   const today = "Сегодня";
@@ -16,19 +20,38 @@ const convertDate = (timestamp: string) => {
     : today;
 };
 
-const ArticleDetails = ({ article }: { article: any }) => {
+const ArticleDetails = ({ article, logView }: IArticleDetailsProps) => {
   const { theme } = useTheme();
   const currentTheme = getCurrentTheme(theme);
   const imgFilter = () => (theme === "dark" ? 50 : 0);
 
   const articleText = JSON.parse(article?.text).articleElements;
 
-  // console.log("article.text", article);
-  // console.log("articleText", articleText);
+  useEffect(() => {
+    const storedViews = localStorage.getItem(lsViewsKey);
+
+    if (storedViews !== null) {
+      const views = JSON.parse(storedViews);
+
+      if (Array.isArray(views)) {
+        const id = views.find((view) => view === article.id);
+
+        if (id) return;
+
+        views.push(article.id);
+        localStorage.setItem(lsViewsKey, JSON.stringify(views));
+        logView(article.id);
+      }
+    } else {
+      localStorage.setItem(lsViewsKey, JSON.stringify([article.id]));
+      logView(article.id);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <InnerContainer>
-      <div className={`${s.details} ${s[currentTheme]}`}>
+      <article className={`${s.details} ${s[currentTheme]}`}>
         <div className={s.articleDetails}>
           <Title tag={"h2"} text={article.title} />
           <p className={s.description}>{article.description}</p>
@@ -46,15 +69,6 @@ const ArticleDetails = ({ article }: { article: any }) => {
               grayscale={imgFilter()}
             />
           </div>
-          {/* <div className={s.thumb}>
-            <Image
-              src={imageData ? imageData : setImageSrc(ipfs)}
-              unoptimized
-              alt="Uploaded 3"
-              width={width}
-              height={height}
-            />
-          </div> */}
 
           <p className={s.id}>{`ID: ${article.id || "000"}`}</p>
 
@@ -73,7 +87,7 @@ const ArticleDetails = ({ article }: { article: any }) => {
             )}
           </div>
         </div>
-      </div>
+      </article>
     </InnerContainer>
   );
 };

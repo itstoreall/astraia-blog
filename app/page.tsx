@@ -3,6 +3,7 @@ import s from "./page.module.scss";
 import HomeContent from "@/components/Home";
 // import { SITE_DOMAIN } from "@/constants";
 import metadataHandler from "@/utils/metadataHandler";
+import services from "@/services";
 
 // export const metadata: Metadata = {
 //   title: "Astraia",
@@ -26,10 +27,12 @@ import metadataHandler from "@/utils/metadataHandler";
 
 export const metadata: Metadata = metadataHandler("/");
 
-const Home = () => {
+const Home = async () => {
+  const articles = await services.getArticles();
+
   return (
     <div className={s.content}>
-      <HomeContent />
+      <HomeContent articles={articles} />
     </div>
   );
 };
