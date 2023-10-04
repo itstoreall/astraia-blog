@@ -1,4 +1,4 @@
-export const THEME_BY_DEFAULT = "light";
+export const THEME_BY_DEFAULT = "dark";
 
 export const SITE_DOMAIN = "https://astraia.storeall.com.ua";
 
