@@ -10,7 +10,7 @@ import Title from "@/components/Title";
 import { useEffect, useState } from "react";
 
 const ArticleList = ({ articles }: { articles: IArticle[] }) => {
-  const [currentTheme, setCurrentTheme] = useState<string>("light");
+  const [currentTheme, setCurrentTheme] = useState<string>("");
   const { theme, setTheme } = useTheme();
   // const currentTheme = getCurrentTheme(theme);
   const imgFilter = () => (theme === "dark" ? 50 : 0);
@@ -25,13 +25,13 @@ const ArticleList = ({ articles }: { articles: IArticle[] }) => {
     //   // !theme && setTheme("light");
     //   // setCurrentTheme("light");
     // } else setCurrentTheme(theme);
-    theme && setCurrentTheme(theme);
+    cls && setCurrentTheme(cls);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [theme]);
+  }, []);
 
   return (
     <InnerContainer>
-      <ul className={`${s.list} ${s[currentTheme]}`}>
+      <ul className={`${s.list} ${s[currentTheme ? currentTheme : "light"]}`}>
         {articles.map((art: IArticle) => (
           <li key={art.id} className={s.item}>
             <Link href={`/articles/${art.id}`}>
