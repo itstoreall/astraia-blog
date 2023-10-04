@@ -51,7 +51,7 @@ const ArticleDetails = ({ article, logView }: IArticleDetailsProps) => {
 
   return (
     <InnerContainer>
-      <div className={`${s.details} ${s[currentTheme]}`}>
+      <article className={`${s.details} ${s[currentTheme]}`}>
         <div className={s.articleDetails}>
           <Title tag={"h2"} text={article.title} />
           <p className={s.description}>{article.description}</p>
@@ -87,7 +87,7 @@ const ArticleDetails = ({ article, logView }: IArticleDetailsProps) => {
             )}
           </div>
         </div>
-      </div>
+      </article>
     </InnerContainer>
   );
 };

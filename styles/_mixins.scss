@@ -11,6 +11,12 @@
   text-transform: uppercase;
 }
 
+// ------- position
+
+@mixin position($p) {
+  position: $p;
+}
+
 // ------- display
 
 @mixin display($display: block) {
@@ -116,8 +122,20 @@
   font-size: $size;
 }
 
+@mixin lineHight($lh) {
+  line-height: $lh;
+}
+
+@mixin color($c) {
+  color: $c;
+}
+
 @mixin uppercase() {
   text-transform: uppercase;
+}
+
+@mixin wordWrap($ww) {
+  word-wrap: $ww;
 }
 
 // ------- transition
@@ -165,11 +183,11 @@
 
 // ------- Custom
 
-@mixin lineClamp($lines: 2) {
-  overflow: hidden;
+@mixin lineClamp($l: 2) {
   display: -webkit-box;
-  -webkit-line-clamp: $lines;
   -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: $l;
 }
 
 @mixin crumbs() {
