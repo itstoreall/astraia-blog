@@ -10,22 +10,23 @@ import Title from "@/components/Title";
 import { useEffect, useState } from "react";
 
 const ArticleList = ({ articles }: { articles: IArticle[] }) => {
-  const [currentTheme, setCurrentTheme] = useState<string>("");
+  const [currentTheme, setCurrentTheme] = useState<string>("light");
   const { theme, setTheme } = useTheme();
   // const currentTheme = getCurrentTheme(theme);
   const imgFilter = () => (theme === "dark" ? 50 : 0);
 
   useEffect(() => {
-    // const cls = localStorage.getItem("theme");
+    const cls = localStorage.getItem("theme");
 
-    // console.log("theme", theme);
-    // console.log("cls", cls);
+    console.log("theme", theme);
+    console.log("cls", cls);
 
     // if (!theme) {
     //   // !theme && setTheme("light");
     //   // setCurrentTheme("light");
     // } else setCurrentTheme(theme);
     theme && setCurrentTheme(theme);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [theme]);
 
   return (
