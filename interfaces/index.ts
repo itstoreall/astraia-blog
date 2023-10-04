@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
 
 export interface ThemeToggleProps {
-  theme: string;
-  setTheme: (theme: string) => void;
+  theme: "light" | "dark";
+  setTheme: (theme: "light" | "dark") => void;
 }
 
 export interface IChildrenProps {
