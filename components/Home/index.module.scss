@@ -1,8 +1,339 @@
-@import "../../styles/_mixins.scss";
+@import "../../styles/mixins";
+@import "../../styles/extends";
 
 .home {
-  .thumb {
-    @include flexXY(center, center);
-    overflow: hidden;
+  .homeContent {
+    @include themeHandler() {
+      > h2 {
+        @include marginB(20px);
+        @include fontSize(28px);
+        @include transition(0.4s ease);
+
+        @include minWidth($tablet) {
+          @include width(80%);
+          @include fontSize(32px);
+        }
+
+        @include minWidth($desktop) {
+          @include width(80%);
+          @include fontSize(36px);
+        }
+
+        // &:nth-child(1) { } // *
+      }
+
+      .paragraph {
+        @include color(var(--text-light));
+        @include transition(0.4s ease);
+
+        &:not(:last-child) {
+          @include marginB(40px);
+        }
+
+        @include fontSize(14px);
+        @include lineHight(1.4);
+
+        @include minWidth($tablet) {
+          @include fontSize(16px);
+        }
+
+        @include minWidth($desktop) {
+          @include fontSize(18px);
+        }
+      }
+
+      // ---------- Latest article:
+
+      .latestArticleWrap {
+        @include padding(60px 0 40px);
+        @include position(relative);
+
+        // background-color: pink;
+
+        // .labelWrap {
+        //   @include position(absolute);
+        //   top: 10px;
+        //   left: 0;
+        //   display: flex;
+        //   align-items: center;
+        //   width: 100%;
+        //   // background-color: skyblue;
+
+        //   > span.labelTitle {
+        //     @include padding(10px 20px);
+        //     @include marginR(20px);
+        //     @include fontSize(14px);
+        //     font-weight: 700;
+        //     letter-spacing: 1.2px;
+        //     @include color(var(--text-invert));
+        //     @include uppercase();
+        //     white-space: nowrap;
+        //     border-radius: 6px;
+        //     background-color: var(--contrast-background);
+        //   }
+
+        //   > span.labelLine {
+        //     display: block;
+        //     width: 100%;
+        //     height: 1px;
+        //     background-color: $middleDark;
+        //   }
+        // }
+
+        .latestArticle {
+          // @include padding(30px 0);
+          @include padding(15px 15px 20px);
+          // border: 1px solid $middleDark;
+          border-radius: 14px;
+          // border-top: 1px solid $middleDark;
+          background-color: var(--background-hover);
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          // border-radius: 8px;
+          @include transition(0.4s ease);
+
+          // background-color: pink;
+
+          cursor: pointer;
+
+          &:hover {
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          }
+
+          @include minWidth($tablet) {
+            @include padding(20px 20px 30px);
+          }
+
+          @include minWidth($desktop) {
+            @include display(flex);
+            @include padding(20px 20px 20px);
+          }
+
+          .thumb {
+            // ---------- Image (thumb):
+
+            // &:nth-child(1) {
+            @include width(100%);
+
+            @include maxWidth($desktop - 0.1) {
+              @include marginB(20px);
+            }
+
+            @include minWidth($desktop) {
+              @include width(65%);
+            }
+
+            > img {
+              border-radius: 6px;
+            }
+            // }
+          }
+
+          // ---------- Meta:
+
+          .metaWrap {
+            @include width(100%);
+            @extend %extends-hide-scrollbar;
+
+            @include minWidth($desktop) {
+              @include width(35%);
+              @include height(280px);
+              overflow-y: scroll;
+              // background-color: PINK;
+            }
+
+            .metaContent {
+              @include minWidth($desktop) {
+                @include padding(0 10px 0 20px);
+              }
+
+              > h3.metaTitle {
+                @include marginB(20px);
+                @include fontSize(18px);
+                @include color(var(--text));
+                @include wordWrap(break-word);
+                @include transition(0.4s ease);
+                // @include lineClamp(4);
+
+                &:hover {
+                  @include color(var(--contrast-background-hover));
+                }
+
+                @include minWidth($tablet) {
+                  @include fontSize(24px);
+
+                  @include maxWidth($desktop - 0.1) {
+                    @include width(80%);
+                  }
+                }
+
+                @include minWidth($desktop) {
+                  @include fontSize(20px);
+                }
+              }
+
+              > p.metaDescription {
+                // @include marginB(30px);
+                @include fontSize(14px);
+                @include lineHight(1.4);
+                @include color(var(--text-light));
+                @include transition(0.4s ease);
+                // @include lineClamp(7);
+
+                @include minWidth($tablet) {
+                  @include fontSize(16px);
+                }
+
+                @include minWidth($desktop) {
+                  @include fontSize(16px);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // ---------- Top three:
+
+      .topThreeWrap {
+        @include padding(60px 0 40px);
+        @include position(relative);
+
+        // .labelWrap {
+        //   @include position(absolute);
+        //   top: 10px;
+        //   left: 0;
+        //   display: flex;
+        //   align-items: center;
+        //   width: 100%;
+
+        //   > span.labelTitle {
+        //     @include padding(7px 20px);
+        //     @include marginR(10px);
+        //     @include fontSize(12px);
+        //     font-weight: 700;
+        //     letter-spacing: 1.2px;
+        //     @include color(var(--text-invert));
+        //     @include uppercase();
+        //     white-space: nowrap;
+        //     border-radius: 15px;
+        //     background-color: var(--contrast-background);
+        //   }
+
+        //   > span.labelLine {
+        //     display: block;
+        //     width: 100%;
+        //     height: 1px;
+        //     background-color: $middleDark;
+        //   }
+        // }
+
+        .topThree {
+          .list {
+            @include themeHandler() {
+              list-style: none;
+              @include padding(0);
+              @include margin(0);
+              @include marginB(-20px);
+
+              @include minWidth($tablet) {
+                @include flexWrap(wrap);
+
+                @include maxWidth($desktop - 1) {
+                  justify-content: space-between;
+                }
+              }
+
+              .item {
+                @include marginB(20px);
+                background-color: var(--background-hover);
+                border-radius: 8px;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                transition: 0.4s ease;
+
+                &:hover {
+                  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                }
+
+                @include minWidth($tablet) {
+                  @include width(49%);
+                }
+
+                @include minWidth($desktop) {
+                  @include width(32%);
+
+                  &:not(:nth-child(3n + 3)) {
+                    @include marginR(2%);
+                  }
+                }
+
+                .card {
+                  .thumb {
+                    img {
+                      border-radius: 6px 6px 0 0;
+                    }
+                  }
+                  .meta {
+                    @include padding(15px 15px 20px);
+
+                    h3 {
+                      @include marginB(12px);
+                      @include fontSize(15px);
+                      color: var(--text);
+                      @include lineClamp(1);
+                      transition: 0.4s ease;
+                    }
+
+                    .description {
+                      @include fontSize(13px);
+                      color: var(--text-light);
+                      line-height: 1.4;
+                      @include lineClamp(2);
+                      transition: 0.4s ease;
+
+                      /*
+                      overflow: hidden;
+                      white-space: nowrap;
+                      text-overflow: ellipsis;
+                      -webkit-text-overflow: ellipsis;
+                      -ms-text-overflow: ellipsis;
+                      */
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.labelWrap {
+  @include position(absolute);
+  top: 10px;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  > span.labelTitle {
+    @include padding(7px 20px);
+    @include marginR(10px);
+    @include fontSize(12px);
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    @include color(var(--text-invert));
+    @include uppercase();
+    white-space: nowrap;
+    border-radius: 15px;
+    background-color: var(--contrast-background);
+  }
+
+  > span.labelLine {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: $middleDark;
   }
 }

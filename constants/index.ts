@@ -20,3 +20,6 @@ export const MONTHS = [
   "ноя",
   "дек",
 ];
+
+export const BLOG_NAME = "astraia";
+export const LS_VIEWS_KEY = `*_${BLOG_NAME}_views:`;
