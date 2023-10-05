@@ -10,10 +10,10 @@
 
   @include themeHandler() {
     span {
-      background-color: var(--button);
+      @include bgColor(var(--button));
 
       &:before {
-        background-color: var(--secondary-background);
+        @include bgColor(var(--secondary-background));
       }
     }
   }
@@ -33,7 +33,7 @@
     right: 0;
     bottom: 0;
     @include transition($s04);
-    border-radius: 34px;
+    @include borderRadius(34px);
   }
 
   span:before {
@@ -44,7 +44,7 @@
     left: 4px;
     bottom: 4px;
     @include transition($s04);
-    border-radius: 50%;
+    @include borderRadius(50%);
   }
 
   input:checked + span:before {

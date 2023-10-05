@@ -5,15 +5,12 @@
 
 .footer {
   @extend %extends-display-flex;
-  width: 100%;
+  @extend %extends-width-100;
   height: $footerHeight;
 
   .content {
     @include themeHandler() {
-      @extend %extends-display-flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      @extend %extends-flex-dir-colimn-x-center-y-center;
       height: 100%;
 
       & > div:first-child {
@@ -25,15 +22,12 @@
         color: var(--middleGrey);
 
         .copyright {
-          @extend %extends-display-flex;
-          justify-content: center;
+          @extend %extends-flex-x-center;
 
           .logoLink {
-            @extend %extends-display-flex;
-            align-items: center;
+            @extend %extends-flex-y-center;
             @include logo($footerCopyrightFontSize, 3px);
             color: inherit;
-            // background-color: teal;
 
             &:hover {
               color: var(--button);

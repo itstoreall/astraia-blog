@@ -1,5 +1,6 @@
-@import "../theme/index.scss";
-@import "../styles/vars.scss";
+@import "../styles/mixins";
+@import "../styles/vars";
+@import "../theme/index";
 
 body {
   margin: 0;
@@ -11,7 +12,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-color: $light;
+  @include bgColor($light);
   transition: background-color 0.4s ease;
 }
 
@@ -35,7 +36,7 @@ p {
 
 button {
   border: none;
-  background-color: transparent;
+  @include bgColor(transparent);
 }
 
 a {
@@ -62,19 +63,16 @@ code {
 
 .globalWrapper {
   min-width: 100%;
-  // background-color: green;
 }
 
 .main {
   margin: 0 auto;
   max-width: $max;
   min-height: 100vh;
-  // background-color: blue;
 }
 
 [data-theme="light"] body {
-  background-color: $light;
-  // transition: $s04;
+  @include bgColor($light);
   color: $dark;
 
   h1,
@@ -89,8 +87,7 @@ code {
 }
 
 [data-theme="dark"] body {
-  background-color: $dark;
-  // transition: $s04;
+  @include bgColor($dark);
   color: $light;
 
   h1,

@@ -7,8 +7,8 @@
 
   .latestArticle {
     @include padding(15px 15px 20px);
-    border-radius: 14px;
-    background-color: var(--background-hover);
+    @include borderRadius(14px);
+    @include bgColor(var(--background-hover));
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     @include transition(0.4s ease);
 
@@ -30,7 +30,7 @@
     .thumb {
       // ---------- Image (thumb):
       @extend %extends-position-relative;
-      @include width(100%);
+      @extend %extends-width-100;
 
       @include maxWidth($desktop - 0.1) {
         @include marginB(20px);
@@ -41,14 +41,14 @@
       }
 
       > img {
-        border-radius: 6px;
+        @include borderRadius(6px);
       }
     }
 
     // ---------- Meta:
 
     .metaWrap {
-      @include width(100%);
+      @extend %extends-width-100;
       @extend %extends-hide-scrollbar;
 
       @include minWidth($desktop) {
@@ -62,28 +62,21 @@
           @include padding(0 10px 0 20px);
         }
 
-        h3 {
+        // ---------- Title (Component:
+
+        > h3 {
           @include marginB(20px);
-          @include fontSize(20px);
-          @include color(var(--text));
           @include wordWrap(break-word);
           @include transition(0.4s ease);
-          // @include lineClamp(4);
 
           &:hover {
             @include color(var(--contrast-background-hover));
           }
 
           @include minWidth($tablet) {
-            @include fontSize(24px);
-
             @include maxWidth($desktop - 0.1) {
               @include width(80%);
             }
-          }
-
-          @include minWidth($desktop) {
-            @include fontSize(20px);
           }
         }
 

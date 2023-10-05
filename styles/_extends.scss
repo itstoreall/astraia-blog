@@ -20,17 +20,77 @@
   display: flex;
 }
 
-// ----------- flex:
+// ----------- flex x:
+
+%extends-justify-content-center {
+  justify-content: center;
+}
+
+%extends-justify-content-end {
+  justify-content: flex-end;
+}
+
+%extends-justify-content-between {
+  justify-content: space-between;
+}
+
+%extends-flex-x-center {
+  @extend %extends-display-flex;
+  @extend %extends-justify-content-center;
+}
+
+%extends-flex-x-end {
+  @extend %extends-display-flex;
+  @extend %extends-justify-content-end;
+}
+
+%extends-flex-x-between {
+  @extend %extends-display-flex;
+  @extend %extends-justify-content-between;
+}
+
+// ----------- flex y:
 
 %extends-align-items-center {
   align-items: center;
 }
 
-// ----------- flex y:
-
 %extends-flex-y-center {
   @extend %extends-display-flex;
   @extend %extends-align-items-center;
+}
+
+// ----------- flex x y:
+
+%extends-flex-x-center-y-center {
+  @extend %extends-display-flex;
+  @extend %extends-justify-content-center;
+  @extend %extends-align-items-center;
+}
+
+%extends-flex-x-between-y-center {
+  @extend %extends-display-flex;
+  @extend %extends-justify-content-between;
+  @extend %extends-align-items-center;
+}
+
+// ----------- flex direction:
+
+%extends-flex-direction-column {
+  flex-direction: column;
+}
+
+%extends-flex-dir-colimn-x-center-y-center {
+  @extend %extends-display-flex;
+  @extend %extends-flex-direction-column;
+  @extend %extends-justify-content-center;
+  @extend %extends-align-items-center;
+}
+
+// ----------- width:
+
+%extends-width-100 {
+  width: 100%;
 }
 
 // ----------- font:

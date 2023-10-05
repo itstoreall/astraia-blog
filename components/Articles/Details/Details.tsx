@@ -55,8 +55,9 @@ const ArticleDetails = ({ article, logView }: IArticleDetailsProps) => {
     <InnerContainer>
       <article className={`${s.details} ${s[currentTheme]}`}>
         <div className={s.articleDetails}>
-          <Title tag={"h2"} text={article.title} />
+          <Title tag={"h2"} text={article.title} style={"page_title"} />
           <p className={s.description}>{article.description}</p>
+
           <div className={s.publicationDate}>
             <p className={s.author}>{`Автор: ${article.author}`}</p>
             <p className={s.timestamp}>{`Публикация: ${convertDate(

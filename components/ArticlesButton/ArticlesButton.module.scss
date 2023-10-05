@@ -10,17 +10,16 @@
     right: 20px;
     display: inline-block;
     padding: 4px;
-    background-color: var(--secondary-background);
-    border-radius: 9px;
+    @include bgColor(var(--secondary-background));
+    @include borderRadius(9px);
     cursor: pointer;
     transition: background-color 0.4s ease;
-    // background-color: pink;
 
     .articlesButton {
       @extend %extends-display-flex;
       padding: 4px;
       border: 4px solid var(--contrast-background);
-      border-radius: 6px;
+      @include borderRadius(6px);
       transition: border-color 0.4s ease;
 
       svg {

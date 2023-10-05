@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import services from "@/services";
 import s from "../page.module.scss";
-import ArticleList from "@/components/Articles/List/List";
+import ArticleList from "@/components/Articles/ArticleList";
 import metadataHandler from "@/utils/metadataHandler";
 
 export const metadata: Metadata = metadataHandler("/articles");

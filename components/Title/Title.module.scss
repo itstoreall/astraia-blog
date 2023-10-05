@@ -1,7 +1,38 @@
-@import "../../styles/_mixins.scss";
+@import "../../styles/mixins";
+@import "../../styles/vars";
+@import "../../theme/index";
 
 h1.title {
   @include logo(18px);
 }
 
 // h3.title { &.card { } }
+
+h2.title {
+  &.page_title {
+    @include fontSize(28px);
+
+    @include minWidth($tablet) {
+      @include fontSize(32px);
+    }
+
+    @include minWidth($desktop) {
+      @include fontSize(36px);
+    }
+  }
+}
+
+h3.title {
+  &.card_medium {
+    @include fontSize(20px);
+    @include color(var(--text));
+
+    @include minWidth($tablet) {
+      @include fontSize(24px);
+    }
+
+    @include minWidth($desktop) {
+      @include fontSize(20px);
+    }
+  }
+}
