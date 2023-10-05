@@ -1,15 +1,16 @@
-@import "../../theme/index.scss";
-@import "../../styles/vars.scss";
-@import "../../styles/_mixins.scss";
+@import "../../styles/extends";
+@import "../../styles/mixins";
+@import "../../styles/vars";
+@import "../../theme/index";
 
 .footer {
-  display: flex;
+  @extend %extends-display-flex;
   width: 100%;
   height: $footerHeight;
 
   .content {
     @include themeHandler() {
-      display: flex;
+      @extend %extends-display-flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
@@ -24,11 +25,11 @@
         color: var(--middleGrey);
 
         .copyright {
-          display: flex;
+          @extend %extends-display-flex;
           justify-content: center;
 
           .logoLink {
-            display: flex;
+            @extend %extends-display-flex;
             align-items: center;
             @include logo($footerCopyrightFontSize, 3px);
             color: inherit;

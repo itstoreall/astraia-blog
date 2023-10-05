@@ -1,6 +1,7 @@
-@import "../../styles/vars.scss";
-@import "../../theme/index.scss";
-@import "../../styles/_mixins.scss";
+@import "../../styles/extends";
+@import "../../styles/mixins";
+@import "../../styles/vars";
+@import "../../theme/index";
 
 .header {
   @include themeHandler() {
@@ -11,7 +12,7 @@
     // transition: background-color 0.4s ease;
 
     .content {
-      display: flex;
+      @extend %extends-display-flex;
       justify-content: space-between;
       align-items: center;
       padding: 0 20px;
