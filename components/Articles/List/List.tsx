@@ -9,24 +9,9 @@ import ImageHandler from "@/components/Image/ImageHandler";
 import Title from "@/components/Title";
 
 const ArticleList = ({ articles }: { articles: IArticle[] }) => {
-  // const [currentTheme, setCurrentTheme] = useState<string>("");
   const { theme } = useTheme();
   const currentTheme = getCurrentTheme(theme);
-  const imgFilter = () => (theme === "dark" ? 50 : 0);
-
-  // useEffect(() => {
-  //   const cls = localStorage.getItem("theme");
-
-  //   console.log("theme", theme);
-  //   console.log("cls", cls);
-
-  //   // if (!theme) {
-  //   //   // !theme && setTheme("light");
-  //   //   // setCurrentTheme("light");
-  //   // } else setCurrentTheme(theme);
-  //   cls && setCurrentTheme(cls);
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
+  const imgFilter = () => (currentTheme === "dark" ? 50 : 0);
 
   return (
     <InnerContainer>

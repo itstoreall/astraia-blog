@@ -1,0 +1,31 @@
+@import "../../styles/extends";
+@import "../../styles/mixins";
+
+.label {
+  @include position(absolute);
+  top: 10px;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  > span.labelTitle {
+    @include padding(7px 20px);
+    @include marginR(10px);
+    @include fontSize(12px);
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    @include color(var(--text-invert));
+    @include uppercase();
+    white-space: nowrap;
+    border-radius: 15px;
+    background-color: var(--contrast-background);
+  }
+
+  > span.labelLine {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: $middleDark;
+  }
+}

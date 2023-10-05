@@ -23,7 +23,7 @@ const convertDate = (timestamp: string) => {
 const ArticleDetails = ({ article, logView }: IArticleDetailsProps) => {
   const { theme } = useTheme();
   const currentTheme = getCurrentTheme(theme);
-  const imgFilter = () => (theme === "dark" ? 50 : 0);
+  const imgFilter = () => (currentTheme === "dark" ? 50 : 0);
 
   const articleText = JSON.parse(article?.text).articleElements;
 

@@ -2,7 +2,6 @@
 @import "../../../theme/index.scss";
 
 .details {
-  // background-color: yellowgreen;
   @include themeHandler() {
     .articleDetails {
       @include marginB(80px);
