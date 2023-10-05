@@ -2,10 +2,10 @@
 @import "../../styles/mixins";
 
 .label {
-  @include position(absolute);
+  @extend %extends-position-absolute;
   top: 10px;
   left: 0;
-  display: flex;
+  @extend %extends-display-flex;
   align-items: center;
   width: 100%;
 

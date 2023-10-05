@@ -15,6 +15,12 @@ const setImageSrc = (cid: string) =>
   cid ? `https://${cid}.${ipfs}` : defaultImage;
 
 const ImageHandler = ({ cid, alt, grayscale }: IImageHandlerProps) => {
+  const inlineStyle = {
+    width: "100%",
+    height: "auto",
+    filter: `grayscale(${grayscale}%)`,
+  };
+
   return (
     <Image
       src={setImageSrc(cid)}
@@ -22,13 +28,7 @@ const ImageHandler = ({ cid, alt, grayscale }: IImageHandlerProps) => {
       alt={alt}
       width={900}
       height={450}
-      style={{
-        // position: "relative",
-        width: "100%",
-        height: "auto",
-        // objectFit: "contain",
-        filter: `grayscale(${grayscale}%)`,
-      }}
+      style={inlineStyle}
     />
   );
 };

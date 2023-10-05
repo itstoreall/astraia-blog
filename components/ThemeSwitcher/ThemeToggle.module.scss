@@ -1,9 +1,10 @@
-@import "../../theme/index.scss";
-@import "../../styles/vars.scss";
-@import "../../styles/_mixins.scss";
+@import "../../styles/extends";
+@import "../../styles/mixins";
+@import "../../styles/vars";
+@import "../../theme/index";
 
 .switchButton {
-  position: relative;
+  @extend %extends-position-relative;
   display: inline-block;
   @include widthHeight(60px, 34px);
 
@@ -25,7 +26,7 @@
   }
 
   span {
-    position: absolute;
+    @extend %extends-position-absolute;
     cursor: pointer;
     top: 0;
     left: 0;
@@ -36,7 +37,7 @@
   }
 
   span:before {
-    position: absolute;
+    @extend %extends-position-absolute;
     content: "";
     height: 26px;
     width: 26px;

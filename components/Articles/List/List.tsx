@@ -8,6 +8,7 @@ import s from "./List.module.scss";
 import InnerContainer from "@/components/Containers/InnerContainer";
 import ImageHandler from "@/components/Image/ImageHandler";
 import Title from "@/components/Title";
+import ViewCounter from "@/components/ViewCounter";
 
 const ArticleList = ({ articles }: { articles: IArticle[] }) => {
   const { theme } = useTheme();
@@ -22,6 +23,14 @@ const ArticleList = ({ articles }: { articles: IArticle[] }) => {
             <Link href={`/articles/${art.id}`}>
               <div className={s.card}>
                 <div className={s.thumb}>
+                  {art?.views && (
+                    <ViewCounter
+                      views={art?.views}
+                      left={"15px"}
+                      bottom={"15px"}
+                    />
+                  )}
+
                   <ImageHandler
                     cid={art.ipfs}
                     alt={art.title}

@@ -1,5 +1,6 @@
-@import "../../styles/vars.scss";
-@import "../../styles/_mixins.scss";
+@import "../../styles/extends";
+@import "../../styles/mixins";
+@import "../../styles/vars";
 
 .headerContainer {
   margin: 0 auto;
@@ -10,25 +11,25 @@
 }
 
 .mainContainer {
-  position: relative;
-  // padding: $headerHeight 0 0 0;
+  @extend %extends-position-relative;
   margin: 0 auto;
-  // background-color: yellow;
+
+  @include minWidth($mobile) {
+    max-width: $mobile + 100;
+  }
 
   @include minWidth($tablet) {
     max-width: $tablet;
-    // background-color: yellowgreen;
   }
 
   @include minWidth($desktop) {
     max-width: $desktop;
-    // background-color: green;
   }
 }
 
 .fixedContainer {
-  position: fixed;
-  display: flex;
+  @extend %extends-position-fixed;
+  @extend %extends-display-flex;
   justify-content: flex-end;
   width: 100%;
   max-width: $max;
