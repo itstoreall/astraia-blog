@@ -9,6 +9,7 @@ import InnerContainer from "@/components/Containers/InnerContainer";
 import ImageHandler from "@/components/Image/ImageHandler";
 import { getCurrentTheme } from "@/utils";
 import { IArticleDetailsProps } from "@/interfaces/articleDetails";
+import ViewCounter from "@/components/ViewCounter";
 
 const lsViewsKey = constants.LS_VIEWS_KEY;
 
@@ -64,6 +65,14 @@ const ArticleDetails = ({ article, logView }: IArticleDetailsProps) => {
           </div>
 
           <div className={s.thumb}>
+            {article?.views && (
+              <ViewCounter
+                views={article?.views}
+                left={"15px"}
+                bottom={"15px"}
+              />
+            )}
+
             <ImageHandler
               cid={article.ipfs}
               alt={article.title}

@@ -1,5 +1,7 @@
+@import "../../styles//extends";
+
 .spinnerWrap {
-  display: flex;
+  @extend %extends-display-flex;
   justify-content: center;
   align-items: center;
   width: 100%;

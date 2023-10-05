@@ -1,4 +1,5 @@
-@import "../../../styles/_mixins.scss";
+@import "../../../styles/mixins";
+@import "../../../styles/extends";
 
 .list {
   @include themeHandler() {
@@ -40,6 +41,8 @@
 
       .card {
         .thumb {
+          @extend %extends-position-relative;
+
           img {
             border-radius: 6px 6px 0 0;
           }

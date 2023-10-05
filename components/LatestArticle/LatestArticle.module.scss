@@ -3,7 +3,7 @@
 
 .latestArticleWrap {
   @include padding(60px 0 40px);
-  @include position(relative);
+  @extend %extends-position-relative;
 
   .latestArticle {
     @include padding(15px 15px 20px);
@@ -29,7 +29,7 @@
 
     .thumb {
       // ---------- Image (thumb):
-      position: relative;
+      @extend %extends-position-relative;
       @include width(100%);
 
       @include maxWidth($desktop - 0.1) {

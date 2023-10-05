@@ -4,11 +4,6 @@ import s from "../page.module.scss";
 import ArticleList from "@/components/Articles/List/List";
 import metadataHandler from "@/utils/metadataHandler";
 
-// export const metadata: Metadata = {
-//   title: "Статьи про духовное саморазвитие",
-//   description: "Astraia blog - статьи про духовное саморазвитие",
-// };
-
 export const metadata: Metadata = metadataHandler("/articles");
 
 const Articles = async () => {

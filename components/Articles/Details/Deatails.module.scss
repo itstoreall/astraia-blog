@@ -1,5 +1,6 @@
 @import "../../../styles/mixins";
-@import "../../../theme/index.scss";
+@import "../../../styles/extends";
+@import "../../../theme/index";
 
 .details {
   @include themeHandler() {
@@ -59,6 +60,7 @@
       }
 
       .thumb {
+        @extend %extends-position-relative;
         @include flexXY(center, center);
         @include marginB(10px);
         overflow: hidden;
