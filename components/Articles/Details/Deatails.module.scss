@@ -41,7 +41,7 @@
       }
 
       .publicationDate {
-        @include flexX(space-between);
+        @extend %extends-flex-x-between;
         @include marginB(20px);
         @include fontSize(14px);
         color: $middleGrey;
@@ -61,7 +61,7 @@
 
       .thumb {
         @extend %extends-position-relative;
-        @include flexXY(center, center);
+        @extend %extends-flex-x-center-y-center;
         @include marginB(10px);
         overflow: hidden;
       }

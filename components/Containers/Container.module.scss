@@ -4,7 +4,7 @@
 
 .headerContainer {
   margin: 0 auto;
-  width: 100%;
+  @extend %extends-width-100;
   max-width: $max;
   height: $headerHeight;
   // background-color: palevioletred;
@@ -29,9 +29,8 @@
 
 .fixedContainer {
   @extend %extends-position-fixed;
-  @extend %extends-display-flex;
-  justify-content: flex-end;
-  width: 100%;
+  @extend %extends-flex-x-end;
+  @extend %extends-width-100;
   max-width: $max;
   z-index: 2;
 }
@@ -54,7 +53,6 @@
 
 .footerContainer {
   margin: 0 auto;
-  width: 100%;
+  @extend %extends-width-100;
   max-width: $max;
-  // background-color: palegreen;
 }

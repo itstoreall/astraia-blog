@@ -5,9 +5,8 @@
   @extend %extends-position-absolute;
   top: 10px;
   left: 0;
-  @extend %extends-display-flex;
-  align-items: center;
-  width: 100%;
+  @extend %extends-flex-y-center;
+  @extend %extends-width-100;
 
   > span.labelTitle {
     @include padding(7px 20px);
@@ -24,7 +23,7 @@
 
   > span.labelLine {
     display: block;
-    width: 100%;
+    @extend %extends-width-100;
     height: 1px;
     background-color: $middleDark;
   }
