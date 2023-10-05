@@ -1,0 +1,116 @@
+@import "../../styles/extends";
+@import "../../styles/mixins";
+
+.latestArticleWrap {
+  @include padding(60px 0 40px);
+  @include position(relative);
+
+  .latestArticle {
+    // @include padding(30px 0);
+    @include padding(15px 15px 20px);
+    // border: 1px solid $middleDark;
+    border-radius: 14px;
+    // border-top: 1px solid $middleDark;
+    background-color: var(--background-hover);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    // border-radius: 8px;
+    @include transition(0.4s ease);
+
+    // background-color: pink;
+
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    @include minWidth($tablet) {
+      @include padding(20px 20px 30px);
+    }
+
+    @include minWidth($desktop) {
+      @include display(flex);
+      @include padding(20px 20px 20px);
+    }
+
+    .thumb {
+      // ---------- Image (thumb):
+      position: relative;
+      @include width(100%);
+
+      @include maxWidth($desktop - 0.1) {
+        @include marginB(20px);
+      }
+
+      @include minWidth($desktop) {
+        @include width(65%);
+      }
+
+      > img {
+        border-radius: 6px;
+      }
+    }
+
+    // ---------- Meta:
+
+    .metaWrap {
+      @include width(100%);
+      @extend %extends-hide-scrollbar;
+
+      @include minWidth($desktop) {
+        @include width(35%);
+        @include height(280px);
+        overflow-y: scroll;
+        // background-color: PINK;
+      }
+
+      .metaContent {
+        @include minWidth($desktop) {
+          @include padding(0 10px 0 20px);
+        }
+
+        > h3.metaTitle {
+          @include marginB(20px);
+          @include fontSize(18px);
+          @include color(var(--text));
+          @include wordWrap(break-word);
+          @include transition(0.4s ease);
+          // @include lineClamp(4);
+
+          &:hover {
+            @include color(var(--contrast-background-hover));
+          }
+
+          @include minWidth($tablet) {
+            @include fontSize(24px);
+
+            @include maxWidth($desktop - 0.1) {
+              @include width(80%);
+            }
+          }
+
+          @include minWidth($desktop) {
+            @include fontSize(20px);
+          }
+        }
+
+        > p.metaDescription {
+          // @include marginB(30px);
+          @include fontSize(14px);
+          @include lineHight(1.4);
+          @include color(var(--text-light));
+          @include transition(0.4s ease);
+          // @include lineClamp(7);
+
+          @include minWidth($tablet) {
+            @include fontSize(16px);
+          }
+
+          @include minWidth($desktop) {
+            @include fontSize(16px);
+          }
+        }
+      }
+    }
+  }
+}

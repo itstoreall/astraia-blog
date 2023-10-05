@@ -122,6 +122,11 @@
   font-size: $size;
 }
 
+@mixin fontSW($s, $w) {
+  font-size: $s;
+  font-weight: $w;
+}
+
 @mixin lineHight($lh) {
   line-height: $lh;
 }
