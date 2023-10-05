@@ -5,3 +5,18 @@ h1.title {
 }
 
 // h3.title { &.card { } }
+
+h3.title {
+  &.card_medium {
+    @include fontSize(20px);
+    @include color(var(--text));
+
+    @include minWidth($tablet) {
+      @include fontSize(24px);
+    }
+
+    @include minWidth($desktop) {
+      @include fontSize(20px);
+    }
+  }
+}

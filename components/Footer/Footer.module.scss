@@ -28,7 +28,6 @@
             @extend %extends-flex-y-center;
             @include logo($footerCopyrightFontSize, 3px);
             color: inherit;
-            // background-color: teal;
 
             &:hover {
               color: var(--button);

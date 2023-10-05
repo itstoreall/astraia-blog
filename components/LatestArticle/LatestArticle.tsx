@@ -4,9 +4,10 @@ import { useTheme } from "next-themes";
 import { getCurrentTheme } from "@/utils";
 import { IArticle } from "@/interfaces";
 import s from "./LatestArticle.module.scss";
-import ViewCounter from "../ViewCounter";
 import ImageHandler from "../Image/ImageHandler";
+import Title from "../Title";
 import Label from "../Label";
+import ViewCounter from "../ViewCounter";
 
 const LatestArticle = ({ articles }: { articles: IArticle | IArticle[] }) => {
   const [latestArt, setLatestArt] = useState<IArticle | null>(null);
@@ -71,7 +72,11 @@ const LatestArticle = ({ articles }: { articles: IArticle | IArticle[] }) => {
 
             <div className={s.metaWrap}>
               <div className={s.metaContent}>
-                <h3 className={s.metaTitle}>{latestArt.title}</h3>
+                <Title
+                  tag={"h3"}
+                  text={latestArt.title}
+                  style={"card_medium"}
+                />
                 <p className={s.metaDescription}>{latestArt.description}</p>
               </div>
             </div>

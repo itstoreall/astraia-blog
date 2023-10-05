@@ -17,14 +17,14 @@
     @include color(var(--text-invert));
     @include uppercase();
     white-space: nowrap;
-    border-radius: 15px;
-    background-color: var(--contrast-background);
+    @include bgColor(var(--contrast-background));
+    @include borderRadius(15px);
   }
 
   > span.labelLine {
     display: block;
     @extend %extends-width-100;
     height: 1px;
-    background-color: $middleDark;
+    @include bgColor($middleDark);
   }
 }

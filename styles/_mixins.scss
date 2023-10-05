@@ -143,6 +143,18 @@
   word-wrap: $ww;
 }
 
+// ------- background:
+
+@mixin bgColor($bgc) {
+  background-color: $bgc;
+}
+
+// ------- border:
+
+@mixin borderRadius($br) {
+  border-radius: $br;
+}
+
 // ------- transition
 
 @mixin transition($tsn) {
@@ -206,14 +218,14 @@
   font-weight: 600;
   @include fontSize(14px);
   color: $colorWhite;
-  background-color: $middleGrey;
-  border-radius: 4px;
+  @include bgColor($middleGrey);
+  @include borderRadius(4px);
   cursor: pointer;
   user-select: none;
 
   &:hover,
   &:focus {
-    background-color: $middleGreyHover;
+    @include bgColor($middleGreyHover);
   }
 }
 
@@ -222,14 +234,14 @@
   @include fontSize(14px);
   font-weight: 600;
   color: var(--text-invert);
-  background-color: var(--contrast-background);
-  border-radius: 6px;
+  @include bgColor(var(--contrast-background));
+  @include borderRadius(6px);
   cursor: pointer;
   @include transition($s04);
   user-select: none;
 
   &:hover {
-    background-color: var(--contrast-background-hover);
+    @include bgColor(var(--contrast-background-hover));
   }
 
   // &:active {
@@ -244,8 +256,8 @@
   @include fontSize(12px);
   font-weight: 400;
   color: $colorWhite;
-  background-color: $middleGrey;
-  border-radius: 4px;
+  @include bgColor($middleGrey);
+  @include borderRadius(4px);
   cursor: pointer;
   user-select: none;
 
@@ -254,6 +266,6 @@
   }
 
   &:hover {
-    background-color: $middleGreyHover;
+    @include bgColor($middleGreyHover);
   }
 }
