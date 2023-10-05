@@ -22,24 +22,26 @@
         // &:nth-child(1) { } // *
       }
 
-      .paragraph {
-        @include color(var(--text-light));
-        @include transition(0.4s ease);
+      > p.paragraph {
+        @include pageDescription();
 
-        &:not(:last-child) {
-          @include marginB(40px);
-        }
+        // @include color(var(--text-light));
+        // @include transition(0.4s ease);
 
-        @include fontSize(14px);
-        @include lineHight(1.4);
+        // &:not(:last-child) {
+        //   @include marginB(40px);
+        // }
 
-        @include minWidth($tablet) {
-          @include fontSize(16px);
-        }
+        // @include fontSize(14px);
+        // @include lineHight(1.4);
 
-        @include minWidth($desktop) {
-          @include fontSize(18px);
-        }
+        // @include minWidth($tablet) {
+        //   @include fontSize(16px);
+        // }
+
+        // @include minWidth($desktop) {
+        //   @include fontSize(18px);
+        // }
       }
 
       // ---------- Latest article is here!
