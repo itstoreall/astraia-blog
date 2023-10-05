@@ -7,41 +7,25 @@
     .articleDetails {
       @include marginB(80px);
 
-      h2 {
+      > h2 {
         @include marginB(20px);
-        @include fontSize(28px);
         transition: color 0.4s ease;
 
         @include minWidth($tablet) {
           @include width(80%);
-          @include fontSize(32px);
         }
 
         @include minWidth($desktop) {
           @include width(80%);
-          @include fontSize(36px);
         }
       }
 
-      .description {
-        @include marginB(20px);
-        line-height: 1.4;
-        color: var(--text-light);
-        transition: 0.4s ease;
-
-        @include minWidth($tablet) {
-          @include width(90%);
-          @include fontSize(18px);
-        }
-
-        @include minWidth($desktop) {
-          @include width(90%);
-          @include fontSize(20px);
-        }
+      > p.description {
+        @include pageDescription();
       }
 
       .publicationDate {
-        @include flexX(space-between);
+        @extend %extends-flex-x-between;
         @include marginB(20px);
         @include fontSize(14px);
         color: $middleGrey;
@@ -61,7 +45,7 @@
 
       .thumb {
         @extend %extends-position-relative;
-        @include flexXY(center, center);
+        @extend %extends-flex-x-center-y-center;
         @include marginB(10px);
         overflow: hidden;
       }
