@@ -1,0 +1,22 @@
+@import "../../styles/extends";
+@import "../../styles/mixins";
+@import "../../theme/index";
+
+.articleElements {
+  > h3 {
+    @extend %extends-transition-04s-ease;
+
+    &:not(:last-child) {
+      @include marginB(20px);
+      @include paddingT(10px);
+    }
+  }
+
+  > p {
+    @extend %extends-transition-04s-ease;
+
+    &:not(:last-child) {
+      @include marginB(30px);
+    }
+  }
+}

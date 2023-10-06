@@ -50,10 +50,7 @@ const LatestArticle = ({ articles }: { articles: IArticle | IArticle[] }) => {
 
       {latestArt && (
         <Link href={`/articles/${latestArt.id}`}>
-          <div
-            className={s.latestArticle}
-            onClick={() => console.log("click latestArticle")}
-          >
+          <div className={s.latestArticle}>
             <div className={s.thumb}>
               {latestArt?.views && (
                 <ViewCounter
