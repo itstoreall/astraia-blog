@@ -5,7 +5,6 @@ import { IArticle } from "@/interfaces";
 import { getCurrentTheme } from "@/utils";
 import { home } from "@/utils/metadataHandler";
 import s from "./index.module.scss";
-// import Title from "../Title";
 import InnerContainer from "../Containers/InnerContainer";
 import LatestArticle from "../LatestArticle";
 import PageMeta from "../Meta/PageMeta";

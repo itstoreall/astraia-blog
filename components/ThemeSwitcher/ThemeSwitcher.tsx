@@ -24,10 +24,3 @@ const ThemeSwitcher: FC = () => {
 };
 
 export default ThemeSwitcher;
-
-/*
-
-<button onClick={() => setTheme("light")}>Light</button>
-<button onClick={() => setTheme("dark")}>Dark Mode</button>
-
-*/

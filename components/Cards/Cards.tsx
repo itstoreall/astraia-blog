@@ -5,7 +5,6 @@ import { IArticle } from "@/interfaces";
 import s from "./Cards.module.scss";
 import ViewCounter from "../ViewCounter";
 import ImageHandler from "../Image/ImageHandler";
-// import Title from "../Title";
 import CardSmallMeta from "../Meta/CardSmallMeta";
 
 const Cards = ({ articles }: { articles: IArticle[] }) => {
