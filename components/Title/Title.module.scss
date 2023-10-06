@@ -6,9 +6,9 @@ h1.title {
   @include logo(18px);
 }
 
-// h3.title { &.card { } }
-
 h2.title {
+  // ----------- page_title:
+
   &.page_title {
     @include fontSize(28px);
 
@@ -23,8 +23,23 @@ h2.title {
 }
 
 h3.title {
+  // ----------- card_small (articles, topThree):
+
+  &.card_small {
+    @extend %extends-font-size-16px;
+    @include lineHight(1.3);
+    @include color(var(--text));
+    @include lineClamp(2);
+
+    @include minWidth($desktop) {
+      @include fontSize(15px);
+    }
+  }
+
+  // ----------- card_medium (latestArticle):
+
   &.card_medium {
-    @include fontSize(20px);
+    @extend %extends-font-size-20px;
     @include color(var(--text));
 
     @include minWidth($tablet) {

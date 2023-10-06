@@ -2,13 +2,13 @@
 
 import { useEffect } from "react";
 import { useTheme } from "next-themes";
-import * as constants from "@/constants";
-import s from "./Deatails.module.scss";
-import Title from "../../Title";
-import InnerContainer from "@/components/Containers/InnerContainer";
-import ImageHandler from "@/components/Image/ImageHandler";
 import { getCurrentTheme } from "@/utils";
 import { IArticleDetailsProps } from "@/interfaces/articleDetails";
+import * as constants from "@/constants";
+import s from "./Deatails.module.scss";
+import InnerContainer from "@/components/Containers/InnerContainer";
+import PageMeta from "@/components/Meta/PageMeta";
+import ImageHandler from "@/components/Image/ImageHandler";
 import ViewCounter from "@/components/ViewCounter";
 
 const lsViewsKey = constants.LS_VIEWS_KEY;
@@ -55,8 +55,7 @@ const ArticleDetails = ({ article, logView }: IArticleDetailsProps) => {
     <InnerContainer>
       <article className={`${s.details} ${s[currentTheme]}`}>
         <div className={s.articleDetails}>
-          <Title tag={"h2"} text={article.title} style={"page_title"} />
-          <p className={s.description}>{article.description}</p>
+          <PageMeta title={article.title} description={article.description} />
 
           <div className={s.publicationDate}>
             <p className={s.author}>{`Автор: ${article.author}`}</p>

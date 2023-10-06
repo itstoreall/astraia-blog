@@ -1,5 +1,5 @@
-@import "../../../styles/mixins";
 @import "../../../styles/extends";
+@import "../../../styles/mixins";
 @import "../../../theme/index";
 
 .details {
@@ -7,31 +7,20 @@
     .articleDetails {
       @include marginB(80px);
 
-      > h2 {
-        @include marginB(20px);
-        transition: color 0.4s ease;
+      // ---------- Main Description is here!
 
-        @include minWidth($tablet) {
-          @include width(80%);
-        }
-
-        @include minWidth($desktop) {
-          @include width(80%);
-        }
-      }
-
-      > p.description {
-        @include pageDescription();
+      > div:nth-child(1) {
+        @include paddingB(40px);
       }
 
       .publicationDate {
         @extend %extends-flex-x-between;
         @include marginB(20px);
-        @include fontSize(14px);
-        color: $middleGrey;
+        @extend %extends-font-size-14px;
+        @extend %extends-color-middle-grey;
 
         @include minWidth($tablet) {
-          @include flexX(flex-start);
+          @include x(flex-start);
         }
 
         .author {
@@ -47,19 +36,18 @@
         @extend %extends-position-relative;
         @extend %extends-flex-x-center-y-center;
         @include marginB(10px);
-        overflow: hidden;
+        @extend %extends-overflow-hidden;
       }
 
       .id {
         @include fontSize(12px);
         @include marginB(30px);
-        color: $middleGrey;
+        @extend %extends-color-middle-grey;
       }
 
       .articleElements {
         .subTitle {
-          // line-height: 3.5;
-          transition: 0.4s ease;
+          @extend %extends-transition-04s-ease;
 
           &:not(:last-child) {
             @include marginB(20px);
@@ -76,15 +64,15 @@
         }
 
         .paragraph {
-          color: var(--text-light);
-          transition: 0.4s ease;
+          @include color(var(--text-light));
+          @extend %extends-transition-04s-ease;
 
           &:not(:last-child) {
             @include marginB(30px);
           }
 
-          @include fontSize(14px);
-          line-height: 1.4;
+          @extend %extends-font-size-14px;
+          @include lineHight(1.4);
 
           @include minWidth($tablet) {
             @include fontSize(16px);

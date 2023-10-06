@@ -57,10 +57,8 @@ const services = {
 export default services;
 
 /*
-
 context: {
   fetchOptions: { next: { revalidate: 0 } },
   fetchOptions: { cache: "no-store" } },
 },
-
 */

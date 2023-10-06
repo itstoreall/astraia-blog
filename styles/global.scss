@@ -1,3 +1,4 @@
+@import "../styles/extends";
 @import "../styles/mixins";
 @import "../styles/vars";
 @import "../theme/index";
@@ -13,7 +14,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   @include bgColor($light);
-  transition: background-color 0.4s ease;
+  @include transition(background-color 0.4s ease);
 }
 
 * {
@@ -25,13 +26,12 @@ h2,
 h3 {
   margin: 0;
   padding: 0;
-  color: $middleGrey;
-  // transition: color 0.4s ease;
+  @extend %extends-color-middle-grey;
 }
 
 p {
   margin: 0;
-  color: $middleGrey;
+  @extend %extends-color-middle-grey;
 }
 
 button {
@@ -41,7 +41,7 @@ button {
 
 a {
   display: block;
-  color: $middleGrey;
+  @extend %extends-color-middle-grey;
 }
 
 img {
@@ -62,7 +62,7 @@ code {
 }
 
 .globalWrapper {
-  min-width: 100%;
+  @extend %extends-width-100;
 }
 
 .main {
@@ -72,31 +72,31 @@ code {
 }
 
 [data-theme="light"] body {
+  @extend %extends-color-dark;
   @include bgColor($light);
-  color: $dark;
 
   h1,
   h2,
   h3 {
-    color: $dark;
+    @extend %extends-color-dark;
   }
 
   a {
-    color: $dark;
+    @extend %extends-color-dark;
   }
 }
 
 [data-theme="dark"] body {
+  @extend %extends-color-light;
   @include bgColor($dark);
-  color: $light;
 
   h1,
   h2,
   h3 {
-    color: $light;
+    @extend %extends-color-light;
   }
 
   a {
-    color: $light;
+    @extend %extends-color-light;
   }
 }

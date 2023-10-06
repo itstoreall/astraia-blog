@@ -18,21 +18,3 @@ const Delete = ({ fill, el }: { fill: string; el: string }) => {
 };
 
 export default Delete;
-
-/*
-<svg
-  width='12'
-  height='12'
-  viewBox='2.5 9.5 18 5'
-  fill={fill}
-  xmlns='http://www.w3.org/2000/svg'
->
-
-<svg
-  width='30'
-  height='30'
-  viewBox='5 2 14 20'
-  fill={fill}
-  xmlns='http://www.w3.org/2000/svg'
->
-*/

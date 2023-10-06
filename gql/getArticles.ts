@@ -17,19 +17,3 @@ const GET_ARTICLES = gql`
 `;
 
 export default GET_ARTICLES;
-
-/*
-query GetArticles {
-  articles {
-    id
-    title
-    description
-    text
-    author
-    ipfs
-    views
-    tags
-    timestamp
-  }
-}
-*/
