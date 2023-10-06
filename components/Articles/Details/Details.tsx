@@ -10,6 +10,7 @@ import InnerContainer from "@/components/Containers/InnerContainer";
 import PageMeta from "@/components/Meta/PageMeta";
 import ImageHandler from "@/components/Image/ImageHandler";
 import ViewCounter from "@/components/ViewCounter";
+import ArticleElements from "@/components/ArticleElements";
 
 const lsViewsKey = constants.LS_VIEWS_KEY;
 
@@ -82,20 +83,7 @@ const ArticleDetails = ({ article, logView }: IArticleDetailsProps) => {
 
           <p className={s.id}>{`ID: ${article.id || "000"}`}</p>
 
-          <div className={s.articleElements}>
-            {articleText.map(
-              (el: { name: string; text: string }, index: number) =>
-                el.name === "title" ? (
-                  <h3 className={s.subTitle} key={index}>
-                    {el.text}
-                  </h3>
-                ) : (
-                  <p className={s.paragraph} key={index}>
-                    {el.text}
-                  </p>
-                )
-            )}
-          </div>
+          <ArticleElements elements={articleText} />
         </div>
       </article>
     </InnerContainer>

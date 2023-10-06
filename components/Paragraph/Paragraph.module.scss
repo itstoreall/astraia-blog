@@ -1,0 +1,20 @@
+@import "../../styles/extends";
+@import "../../styles/mixins";
+@import "../../theme/index";
+
+.paragraph {
+  &.art_paragraph {
+    @include color(var(--text-light));
+
+    @extend %extends-font-size-14px;
+    @include lineHight(1.4);
+
+    @include minWidth($tablet) {
+      @include fontSize(16px);
+    }
+
+    @include minWidth($desktop) {
+      @include fontSize(18px);
+    }
+  }
+}
