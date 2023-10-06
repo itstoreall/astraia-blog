@@ -7,7 +7,7 @@
   > h2 {
     @include marginB(20px);
     @include fontSize(28px);
-    @include transition(0.4s ease);
+    @extend %extends-transition-04s-ease;
 
     @include minWidth($tablet) {
       @include width(80%);
@@ -30,14 +30,14 @@
 .cardSmallMeta {
   > h3 {
     @include marginB(10px);
-    @include transition(0.4s ease);
+    @extend %extends-transition-04s-ease;
   }
 
   > p.description {
-    @include fontSize(13px);
+    @extend %extends-font-size-13px;
     @include color(var(--text-light));
     @include lineHight(1.4);
     @include lineClamp(2);
-    @include transition(0.4s ease);
+    @extend %extends-transition-04s-ease;
   }
 }
