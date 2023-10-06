@@ -1,0 +1,43 @@
+@import "../../styles/extends";
+@import "../../styles/mixins";
+
+// -------------- Page Description:
+
+.pageMeta {
+  > h2 {
+    @include marginB(20px);
+    @include fontSize(28px);
+    @include transition(0.4s ease);
+
+    @include minWidth($tablet) {
+      @include width(80%);
+      @include fontSize(32px);
+    }
+
+    @include minWidth($desktop) {
+      @include width(80%);
+      @include fontSize(36px);
+    }
+  }
+
+  > p.description {
+    @include pageDescription();
+  }
+}
+
+// -------------- Card Description:
+
+.cardSmallMeta {
+  > h3 {
+    @include marginB(10px);
+    @include transition(0.4s ease);
+  }
+
+  > p.description {
+    @include fontSize(13px);
+    @include color(var(--text-light));
+    @include lineHight(1.4);
+    @include lineClamp(2);
+    @include transition(0.4s ease);
+  }
+}

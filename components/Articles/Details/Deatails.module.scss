@@ -7,21 +7,10 @@
     .articleDetails {
       @include marginB(80px);
 
-      > h2 {
-        @include marginB(20px);
-        transition: color 0.4s ease;
+      // ---------- Main Description is here!
 
-        @include minWidth($tablet) {
-          @include width(80%);
-        }
-
-        @include minWidth($desktop) {
-          @include width(80%);
-        }
-      }
-
-      > p.description {
-        @include pageDescription();
+      > div:nth-child(1) {
+        @include paddingB(40px);
       }
 
       .publicationDate {

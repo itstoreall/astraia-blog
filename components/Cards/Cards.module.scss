@@ -51,21 +51,21 @@
         .meta {
           @include padding(15px 15px 20px);
 
-          h3 {
-            @include marginB(12px);
-            @include fontSize(15px);
-            color: var(--text);
-            @include lineClamp(1);
-            transition: 0.4s ease;
-          }
+          // h3 {
+          //   @include marginB(12px);
+          //   @include fontSize(15px);
+          //   color: var(--text);
+          //   @include lineClamp(1);
+          //   transition: 0.4s ease;
+          // }
 
-          .description {
-            @include fontSize(13px);
-            color: var(--text-light);
-            line-height: 1.4;
-            @include lineClamp(2);
-            transition: 0.4s ease;
-          }
+          // .description {
+          //   @include fontSize(13px);
+          //   color: var(--text-light);
+          //   line-height: 1.4;
+          //   @include lineClamp(2);
+          //   transition: 0.4s ease;
+          // }
         }
       }
     }

@@ -1,11 +1,11 @@
 @import "../../styles/extends";
 @import "../../styles/mixins";
 
-.topThreeWrap {
+.topThree {
   @include padding(60px 0 40px);
   @extend %extends-position-relative;
 
-  .topThree {
+  .cards {
     .list {
       @include themeHandler() {
         list-style: none;
