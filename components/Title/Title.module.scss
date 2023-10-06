@@ -7,7 +7,7 @@ h1.title {
 }
 
 h2.title {
-  // ----------- page_title:
+  // ----------- page_title (Home, Details):
 
   &.page_title {
     @include fontSize(28px);
@@ -23,7 +23,7 @@ h2.title {
 }
 
 h3.title {
-  // ----------- card_small (articles, topThree):
+  // ----------- card_small (Articles, TopThree):
 
   &.card_small {
     @extend %extends-font-size-16px;
@@ -36,7 +36,7 @@ h3.title {
     }
   }
 
-  // ----------- card_medium (latestArticle):
+  // ----------- card_medium (LatestArticle):
 
   &.card_medium {
     @extend %extends-font-size-20px;
@@ -48,6 +48,20 @@ h3.title {
 
     @include minWidth($desktop) {
       @include fontSize(20px);
+    }
+  }
+
+  // ----------- art_subtitle (Details):
+
+  &.art_subtitle {
+    @extend %extends-font-size-18px;
+
+    @include minWidth($tablet) {
+      @include fontSize(22px);
+    }
+
+    @include minWidth($desktop) {
+      @include fontSize(24px);
     }
   }
 }

@@ -58,40 +58,20 @@
       }
 
       .articleElements {
-        .subTitle {
+        > h3 {
           @extend %extends-transition-04s-ease;
 
           &:not(:last-child) {
             @include marginB(20px);
             @include paddingT(10px);
           }
-
-          @include minWidth($tablet) {
-            @include fontSize(22px);
-          }
-
-          @include minWidth($desktop) {
-            @include fontSize(24px);
-          }
         }
 
-        .paragraph {
-          @include color(var(--text-light));
+        > p {
           @extend %extends-transition-04s-ease;
 
           &:not(:last-child) {
             @include marginB(30px);
-          }
-
-          @extend %extends-font-size-14px;
-          @include lineHight(1.4);
-
-          @include minWidth($tablet) {
-            @include fontSize(16px);
-          }
-
-          @include minWidth($desktop) {
-            @include fontSize(18px);
           }
         }
       }
