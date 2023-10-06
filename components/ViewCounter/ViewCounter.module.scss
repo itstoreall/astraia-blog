@@ -7,6 +7,10 @@
   @extend %extends-flex-y-center;
   @extend %extends-z-index-1;
 
+  @include bgColor($middleGrey);
+  @include padding(2px 8px 2px 6px);
+  @include borderRadius(15px);
+
   // ------- Eye (svg):
 
   > div:nth-child(1) {
@@ -16,7 +20,7 @@
   // ------- views:
 
   .value {
-    @extend %extends-color-middle-grey;
+    @extend %extends-color-white;
     @include fontSW(13px, 600);
   }
 }

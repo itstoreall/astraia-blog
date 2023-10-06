@@ -123,6 +123,10 @@
 
 // ----------- color:
 
+%extends-color-white {
+  color: $colorWhite;
+}
+
 %extends-color-light {
   color: $light;
 }
@@ -133,6 +137,10 @@
 
 %extends-color-middle-grey {
   color: $middleGrey;
+}
+
+%extends-color-middle-dark {
+  color: $middleDark;
 }
 
 // ----------- z-index:
