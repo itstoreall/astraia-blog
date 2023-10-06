@@ -19,7 +19,7 @@
 
       .copyrightBlock {
         font-size: $footerCopyrightFontSize;
-        color: var(--middleGrey);
+        @include color(var(--middleGrey));
 
         .copyright {
           @extend %extends-flex-x-center;
@@ -27,10 +27,10 @@
           .logoLink {
             @extend %extends-flex-y-center;
             @include logo($footerCopyrightFontSize, 3px);
-            color: inherit;
+            @include color(inherit);
 
             &:hover {
-              color: var(--button);
+              @include color(var(--button));
             }
           }
 

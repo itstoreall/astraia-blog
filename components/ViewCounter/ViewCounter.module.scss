@@ -17,7 +17,6 @@
 
   .value {
     @extend %extends-color-middle-grey;
-    @include color(5px);
     @include fontSW(13px, 600);
   }
 }

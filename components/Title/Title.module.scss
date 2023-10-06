@@ -26,7 +26,7 @@ h3.title {
   // ----------- card_small (articles, topThree):
 
   &.card_small {
-    @include fontSize(16px);
+    @extend %extends-font-size-16px;
     @include lineHight(1.3);
     @include color(var(--text));
     @include lineClamp(2);
@@ -39,7 +39,7 @@ h3.title {
   // ----------- card_medium (latestArticle):
 
   &.card_medium {
-    @include fontSize(20px);
+    @extend %extends-font-size-20px;
     @include color(var(--text));
 
     @include minWidth($tablet) {

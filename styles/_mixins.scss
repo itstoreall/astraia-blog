@@ -1,5 +1,6 @@
-@import "../theme/index.scss";
-@import "../styles/vars.scss";
+@import "../styles/extends";
+@import "../styles/vars";
+@import "../theme/index";
 
 // ------- logo
 
@@ -21,6 +22,14 @@
 
 @mixin display($display: block) {
   display: $display;
+}
+
+@mixin x($X) {
+  justify-content: $X;
+}
+
+@mixin y($Y) {
+  align-items: $Y;
 }
 
 @mixin flex() {
@@ -203,15 +212,15 @@
 @mixin lineClamp($l: 2) {
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  overflow: hidden;
+  @extend %extends-overflow-hidden;
   -webkit-line-clamp: $l;
 }
 
 @mixin buttonStyle() {
   @include padding(5px 12px);
   font-weight: 600;
-  @include fontSize(14px);
-  color: $colorWhite;
+  @extend %extends-font-size-14px;
+  @include color($colorWhite);
   @include bgColor($middleGrey);
   @include borderRadius(4px);
   cursor: pointer;
@@ -225,9 +234,8 @@
 
 @mixin contrastSolidButton() {
   @include padding(8px 15px);
-  @include fontSize(14px);
-  font-weight: 600;
-  color: var(--text-invert);
+  @include fontSW(14px, 600);
+  @include color(var(--text-invert));
   @include bgColor(var(--contrast-background));
   @include borderRadius(6px);
   cursor: pointer;
@@ -266,13 +274,13 @@
 
 @mixin pageDescription() {
   @include color(var(--text-light));
-  @include transition(0.4s ease);
+  @extend %extends-transition-04s-ease;
 
   &:not(:last-child) {
     @include marginB(40px);
   }
 
-  @include fontSize(14px);
+  @extend %extends-font-size-14px;
   @include lineHight(1.4);
 
   @include minWidth($tablet) {
