@@ -8,7 +8,7 @@ const ViewCounter = ({ views, left, bottom }: IViewCounterProps) => {
 
   return (
     <span className={s.viewCounter} style={inlineStyle}>
-      <Eye fill={middleGrey} />
+      <Eye />
       <span className={s.value}>{views}</span>
     </span>
   );

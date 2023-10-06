@@ -17,32 +17,44 @@
         @extend %extends-flex-x-between;
         @include marginB(20px);
         @extend %extends-font-size-14px;
-        @extend %extends-color-middle-grey;
 
         @include minWidth($tablet) {
           @include x(flex-start);
         }
 
-        .author {
-          @include minWidth($tablet) {
-            @include marginR(40px);
-          }
-        }
+        > p {
+          @extend %extends-color-middle-dark;
 
-        // .timestamp { } // *
+          &.author {
+            @include minWidth($tablet) {
+              @include marginR(40px);
+            }
+          }
+
+          // &.timestamp { } // *
+        }
       }
 
       .thumb {
         @extend %extends-position-relative;
         @extend %extends-flex-x-center-y-center;
-        @include marginB(10px);
+        @include marginB(20px);
+        @include borderRadius(8px);
         @extend %extends-overflow-hidden;
+
+        @include minWidth($tablet) {
+          @include borderRadius(10px);
+        }
+
+        @include minWidth($desktop) {
+          @include borderRadius(14px);
+        }
       }
 
       .id {
         @include fontSize(12px);
         @include marginB(30px);
-        @extend %extends-color-middle-grey;
+        @extend %extends-color-middle-dark;
       }
 
       .articleElements {
