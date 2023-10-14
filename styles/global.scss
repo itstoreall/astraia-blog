@@ -4,8 +4,8 @@
 @import "../theme/index";
 
 body {
-  margin: 0;
-  height: 100%;
+  @extend %extends-margin-0;
+  @extend %extends-height-100;
 
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -13,47 +13,47 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  @include bgColor($light);
-  @include transition(background-color 0.4s ease);
+  @extend %extends-bgc-dark;
+  @extend %extends-transition-bgc-04s-ease;
 }
 
 * {
-  text-decoration: none;
+  @extend %extends-text-decoration-none;
 }
 
 h1,
 h2,
 h3 {
-  margin: 0;
-  padding: 0;
+  @extend %extends-margin-0;
+  @extend %extends-padding-0;
   @extend %extends-color-middle-grey;
 }
 
 p {
-  margin: 0;
+  @extend %extends-margin-0;
   @extend %extends-color-middle-grey;
 }
 
 button {
-  border: none;
-  @include bgColor(transparent);
+  @extend %extends-bgc-transparent;
+  @extend %extends-border-none;
 }
 
 a {
-  display: block;
+  @extend %extends-display-block;
   @extend %extends-color-middle-grey;
 }
 
 img {
-  display: block;
+  @extend %extends-display-block;
 }
 
 main {
-  flex: 1;
+  @extend %extends-flex-1;
 }
 
 footer {
-  flex-shrink: 0;
+  @extend %extends-flex-shrink-0;
 }
 
 code {
@@ -66,14 +66,14 @@ code {
 }
 
 .main {
-  margin: 0 auto;
+  @extend %extends-margin-0-auto;
   max-width: $max;
   min-height: 100vh;
 }
 
 [data-theme="light"] body {
   @extend %extends-color-dark;
-  @include bgColor($light);
+  @extend %extends-bgc-light;
 
   h1,
   h2,
@@ -88,7 +88,7 @@ code {
 
 [data-theme="dark"] body {
   @extend %extends-color-light;
-  @include bgColor($dark);
+  @extend %extends-bgc-dark;
 
   h1,
   h2,

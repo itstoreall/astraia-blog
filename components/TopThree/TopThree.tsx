@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { IArticle } from "@/interfaces";
+import { globalConfig as cfg } from "@/config";
 import s from "./TopThree.module.scss";
 import Label from "../Label";
 import Cards from "../Cards";
@@ -24,7 +25,7 @@ const TopThree = ({ articles }: { articles: IArticle[] }) => {
     <div className={s.topThree}>
       {topThree && (
         <>
-          <Label text={"Топ три"} />
+          <Label text={cfg.topThree.label} />
 
           <div className={s.cards}>
             <Cards articles={topThree} />

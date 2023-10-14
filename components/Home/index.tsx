@@ -1,9 +1,8 @@
 "use client";
-
 import { useTheme } from "next-themes";
 import { IArticle } from "@/interfaces";
 import { getCurrentTheme } from "@/utils";
-import { home } from "@/utils/metadataHandler";
+import { globalConfig as cfg } from "@/config";
 import s from "./index.module.scss";
 import InnerContainer from "../Containers/InnerContainer";
 import LatestArticle from "../LatestArticle";
@@ -19,8 +18,8 @@ const HomeContent = ({ articles }: { articles: IArticle[] }) => {
       <div className={s.home}>
         <article className={`${s.homeContent} ${s[currentTheme]}`}>
           <PageMeta
-            title={"Блог о духовном саморазвитии"}
-            description={home.description}
+            title={cfg.home.content.title}
+            description={cfg.home.meta.description}
           />
 
           {articles && (

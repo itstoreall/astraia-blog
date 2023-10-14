@@ -8,10 +8,10 @@
     @include margin(0);
     @include marginB(-20px);
 
-    @include minWidth($tablet) {
+    @include mediaScreen("min", $tablet) {
       @include flexWrap(wrap);
 
-      @include maxWidth($desktop - 1) {
+      @include mediaScreen("max", $desktop - 1) {
         @include x(space-between);
       }
     }
@@ -19,7 +19,7 @@
     .item {
       @include marginB(20px);
       @include bgColor(var(--background-hover));
-      @include borderRadius(8px);
+      @extend %extends-border-radius-8px;
       @extend %extends-box-shadow;
       @extend %extends-transition-04s-ease;
 
@@ -27,11 +27,11 @@
         @extend %extends-box-shadow-hover;
       }
 
-      @include minWidth($tablet) {
+      @include mediaScreen("min", $tablet) {
         @include width(49%);
       }
 
-      @include minWidth($desktop) {
+      @include mediaScreen("min", $desktop) {
         @include width(32%);
 
         &:not(:nth-child(3n + 3)) {

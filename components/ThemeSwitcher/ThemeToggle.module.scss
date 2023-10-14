@@ -5,7 +5,7 @@
 
 .switchButton {
   @extend %extends-position-relative;
-  display: inline-block;
+  @extend %extends-display-inline-block;
   @include widthHeight(60px, 34px);
 
   @include themeHandler() {
@@ -19,32 +19,31 @@
   }
 
   input {
-    opacity: 0;
+    @extend %extends-opacity-0;
   }
 
   span {
     @extend %extends-position-absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    @include transition($s04);
-    @include borderRadius(34px);
+    @extend %extends-top-0;
+    @extend %extends-left-0;
+    @extend %extends-right-0;
+    @extend %extends-bottom-0;
+    @extend %extends-border-radius-34px;
+    @extend %extends-cursor-pointer;
+    @extend %extends-transition-04s-ease;
   }
 
   span:before {
     @extend %extends-position-absolute;
     content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    @include transition($s04);
-    @include borderRadius(50%);
+    @include left(4px);
+    @include bottom(4px);
+    @include widthHeight(26px, 26px);
+    @extend %extends-border-radius-50;
+    @extend %extends-transition-04s-ease;
   }
 
   input:checked + span:before {
-    transform: translateX(26px);
+    @include transformTranslateX(26px);
   }
 }

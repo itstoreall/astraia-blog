@@ -3,26 +3,26 @@
 @import "../../styles/vars";
 
 .headerContainer {
-  margin: 0 auto;
+  @extend %extends-margin-0-auto;
   @extend %extends-width-100;
-  max-width: $max;
-  height: $headerHeight;
+  @extend %extends-max-width-max;
+  @include height($headerHeight);
 }
 
 .mainContainer {
   @extend %extends-position-relative;
-  margin: 0 auto;
+  @extend %extends-margin-0-auto;
 
-  @include minWidth($mobile) {
-    max-width: $mobile + 100;
+  @include mediaScreen("min", $mobile) {
+    @include maxWidth($mobile + 100);
   }
 
-  @include minWidth($tablet) {
-    max-width: $tablet;
+  @include mediaScreen("min", $tablet) {
+    @include maxWidth($tablet);
   }
 
-  @include minWidth($desktop) {
-    max-width: $desktop;
+  @include mediaScreen("min", $desktop) {
+    @include maxWidth($desktop);
   }
 }
 
@@ -30,28 +30,29 @@
   @extend %extends-position-fixed;
   @extend %extends-flex-x-end;
   @extend %extends-width-100;
-  max-width: $max;
-  z-index: 2;
+  @extend %extends-max-width-max;
+  @extend %extends-z-index-2;
 }
 
 .innerContainer {
-  margin: 0 auto;
-  width: 94%;
+  @extend %extends-margin-0-auto;
+  @extend %extends-width-94;
 
-  @include minWidth($tablet) {
-    width: 96%;
+  @include mediaScreen("min", $tablet) {
+    @include width(96%);
   }
 }
 
 .cardContainer {
-  @include maxWidth($tablet - 1) {
-    margin: 0 auto;
-    width: 92%;
+  @extend %extends-margin-0-auto;
+
+  @include mediaScreen("max", $tablet - 1) {
+    @include width(92%);
   }
 }
 
 .footerContainer {
-  margin: 0 auto;
+  @extend %extends-margin-0-auto;
   @extend %extends-width-100;
-  max-width: $max;
+  @extend %extends-max-width-max;
 }
