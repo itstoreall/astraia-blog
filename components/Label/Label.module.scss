@@ -19,6 +19,7 @@
     @extend %extends-white-space-nowrap;
     @include bgColor(var(--contrast-background));
     @extend %extends-border-radius-15px;
+    @extend %extends-transition-04s-ease;
   }
 
   > span.labelLine {
