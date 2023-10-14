@@ -3,27 +3,28 @@
 
 .label {
   @extend %extends-position-absolute;
-  top: 10px;
-  left: 0;
+  @include top(10px);
+  @extend %extends-left-0;
   @extend %extends-flex-y-center;
   @extend %extends-width-100;
 
   > span.labelTitle {
     @include padding(7px 20px);
     @include marginR(10px);
-    @include fontSW(12px, 700);
-    letter-spacing: 1.2px;
+    @extend %extends-font-size-12px;
+    @extend %extends-font-weight-700;
+    @include letterSpacing(1.2px);
     @include color(var(--text-invert));
-    @include uppercase();
-    white-space: nowrap;
+    @extend %extends-text-transform-uppercase;
+    @extend %extends-white-space-nowrap;
     @include bgColor(var(--contrast-background));
-    @include borderRadius(15px);
+    @extend %extends-border-radius-15px;
   }
 
   > span.labelLine {
-    display: block;
+    @extend %extends-display-block;
     @extend %extends-width-100;
     @include height(1px);
-    @include bgColor($middleDark);
+    @extend %extends-bgc-middleDark;
   }
 }

@@ -1,12 +1,13 @@
 import * as constants from "@/constants";
 
 const ipfsLink = process.env.ipfsLink;
-const ipfsImgName = process.env.ipfsImgName;
 
 const defaultTheme = constants.THEME_BY_DEFAULT;
 const domain = constants.SITE_DOMAIN;
+const blogName = constants.BLOG_NAME;
 const blogTitle = constants.BLOG_TITLE;
-const ipfs = `${ipfsLink}/${ipfsImgName}`;
+const defaultImagePath = `_next/static/media/defaultImage.${constants.DEFAULT_IMAGE_ID}.jpg`;
+const ipfs = `${ipfsLink}/${blogName}-image.jpg`;
 const lsViewsKey = constants.LS_VIEWS_KEY;
 const months = constants.MONTHS;
 
@@ -15,6 +16,7 @@ export const globalConfig = {
     defaultTheme,
     domain,
     blogTitle,
+    defaultImagePath,
     ipfs,
     lsViewsKey,
     months,

@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }: IRootLayoutProps) {
   return (
-    <html lang="ru">
+    <html lang="uk">
       <body className={inter.className}>
         <NextThemeProvider>
           <div className="globalWrapper">

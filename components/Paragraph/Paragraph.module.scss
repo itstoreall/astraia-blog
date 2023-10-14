@@ -2,19 +2,19 @@
 @import "../../styles/mixins";
 @import "../../theme/index";
 
-.paragraph {
+p.paragraph {
+  @extend %extends-line-height-1_4;
+  @include color(var(--text-light));
+
+  &.art_description {
+    @extend %extends-font-size-16px;
+  }
+
   &.art_paragraph {
-    @include color(var(--text-light));
-
     @extend %extends-font-size-14px;
-    @include lineHight(1.4);
 
-    @include minWidth($tablet) {
+    @include mediaScreen("min", $tablet) {
       @include fontSize(16px);
-    }
-
-    @include minWidth($desktop) {
-      @include fontSize(18px);
     }
   }
 }

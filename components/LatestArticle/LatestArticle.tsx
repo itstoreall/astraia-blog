@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import { getCurrentTheme } from "@/utils";
+import { getCurrentTheme, imgFilter } from "@/utils";
 import { IArticle } from "@/interfaces";
+import { globalConfig as cfg } from "@/config";
 import s from "./LatestArticle.module.scss";
 import ImageHandler from "../Image/ImageHandler";
 import Title from "../Title";
@@ -14,7 +15,6 @@ const LatestArticle = ({ articles }: { articles: IArticle | IArticle[] }) => {
 
   const { theme } = useTheme();
   const currentTheme = getCurrentTheme(theme);
-  const imgFilter = () => (currentTheme === "dark" ? 50 : 0);
 
   useEffect(() => {
     let latestDate: number = new Date(0).getTime();
@@ -46,10 +46,10 @@ const LatestArticle = ({ articles }: { articles: IArticle | IArticle[] }) => {
 
   return (
     <div className={s.latestArticleWrap}>
-      <Label text={"Недавняя публикация"} />
+      <Label text={cfg.latestArticle.label} />
 
       {latestArt && (
-        <Link href={`/articles/${latestArt.id}`}>
+        <Link href={`${cfg.articles.pathname}/${latestArt.id}`}>
           <div className={s.latestArticle}>
             <div className={s.thumb}>
               {latestArt?.views && (
@@ -62,8 +62,8 @@ const LatestArticle = ({ articles }: { articles: IArticle | IArticle[] }) => {
 
               <ImageHandler
                 cid={latestArt.ipfs}
-                alt={"Вселенная и тонкий мир"}
-                grayscale={imgFilter()}
+                alt={latestArt.title}
+                grayscale={imgFilter(currentTheme)}
               />
             </div>
 
@@ -72,7 +72,7 @@ const LatestArticle = ({ articles }: { articles: IArticle | IArticle[] }) => {
                 <Title
                   tag={"h3"}
                   text={latestArt.title}
-                  style={"card_medium"}
+                  style={cfg.tagTitle.h3.cardMedium}
                 />
                 <p className={s.metaDescription}>{latestArt.description}</p>
               </div>

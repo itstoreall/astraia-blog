@@ -6,19 +6,19 @@
 .footer {
   @extend %extends-display-flex;
   @extend %extends-width-100;
-  height: $footerHeight;
+  @include height($footerHeight);
 
   .content {
     @include themeHandler() {
       @extend %extends-flex-dir-colimn-x-center-y-center;
-      height: 100%;
+      @extend %extends-height-100;
 
       & > div:first-child {
-        margin-bottom: 20px;
+        @include marginB(20px);
       }
 
       .copyrightBlock {
-        font-size: $footerCopyrightFontSize;
+        @extend %extends-font-size-14px;
         @include color(var(--middleGrey));
 
         .copyright {
@@ -26,7 +26,7 @@
 
           .logoLink {
             @extend %extends-flex-y-center;
-            @include logo($footerCopyrightFontSize, 3px);
+            @include logo(14px, 3px);
             @include color(inherit);
 
             &:hover {
@@ -35,7 +35,7 @@
           }
 
           .copyrightIcon {
-            margin: 0 7px 0 5px;
+            @include margin(0 7px 0 5px);
           }
         }
       }

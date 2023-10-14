@@ -1,6 +1,7 @@
 "use client";
 import { useTheme } from "next-themes";
 import { getCurrentTheme } from "@/utils";
+import { globalConfig as cfg } from "@/config";
 import s from "./Header.module.scss";
 import HeaderContainer from "../Containers/HeaderContainer";
 import Link from "next/link";
@@ -18,8 +19,8 @@ const Header = () => {
         <ArticlesButton />
         <div className={s.content}>
           <nav className={s.logo}>
-            <Link href={"/"}>
-              <Title text={"Astraia"} />
+            <Link href={cfg.home.pathname}>
+              <Title text={cfg.gen.blogTitle} />
             </Link>
           </nav>
         </div>

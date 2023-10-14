@@ -1,13 +1,14 @@
 import { Metadata } from "next";
 import services from "@/services";
+import { globalConfig as cfg } from "@/config";
 import s from "../page.module.scss";
 import ArticleList from "@/components/Articles/ArticleList";
 import metadataHandler from "@/utils/metadataHandler";
 
-export const metadata: Metadata = metadataHandler("/articles");
+export const metadata: Metadata = metadataHandler(cfg.articles.pathname);
 
 const Articles = async () => {
-  const articles = await services.getArticles();
+  const articles = await services.getServerArticles();
 
   if (!articles?.length) return <p>no articles</p>;
 

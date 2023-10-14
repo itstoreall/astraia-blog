@@ -1,10 +1,10 @@
-@import "../styles/vars.scss";
 @import "../styles/_mixins.scss";
+@import "../styles/vars.scss";
 
 .content {
-  padding: 20px 0;
+  @include padding(20px 0);
 
-  @include minWidth($tablet) {
-    padding: 30px 0;
+  @include mediaScreen("min", $tablet) {
+    @include padding(30px 0);
   }
 }

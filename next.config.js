@@ -5,7 +5,6 @@ const nextConfig = {
   },
   env: {
     ipfsLink: process.env.IPFS_LINK,
-    ipfsImgName: process.env.IPFS_IMG_NAME,
   },
 };
 

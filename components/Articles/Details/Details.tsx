@@ -1,37 +1,25 @@
 "use client";
-
 import { useEffect } from "react";
 import { useTheme } from "next-themes";
-import { getCurrentTheme } from "@/utils";
+import { getCurrentTheme, imgFilter } from "@/utils";
 import { IArticleDetailsProps } from "@/interfaces/articleDetails";
-import * as constants from "@/constants";
+import { globalConfig as cfg } from "@/config";
 import s from "./Deatails.module.scss";
 import InnerContainer from "@/components/Containers/InnerContainer";
 import PageMeta from "@/components/Meta/PageMeta";
+import PublicationInfoWrapper from "@/components/PublicationInfoWrapper";
 import ImageHandler from "@/components/Image/ImageHandler";
 import ViewCounter from "@/components/ViewCounter";
 import ArticleElements from "@/components/ArticleElements";
 
-const lsViewsKey = constants.LS_VIEWS_KEY;
-
-const convertDate = (timestamp: string) => {
-  const today = "Сегодня";
-  const date = timestamp ? timestamp.split("-") : today;
-  const months = constants.MONTHS;
-  return timestamp
-    ? `${date[2]} ${months[Number(date[1]) - 1]} ${date[0]}`
-    : today;
-};
-
 const ArticleDetails = ({ article, logView }: IArticleDetailsProps) => {
   const { theme } = useTheme();
   const currentTheme = getCurrentTheme(theme);
-  const imgFilter = () => (currentTheme === "dark" ? 50 : 0);
 
   const articleText = JSON.parse(article?.text).articleElements;
 
   useEffect(() => {
-    const storedViews = localStorage.getItem(lsViewsKey);
+    const storedViews = localStorage.getItem(cfg.gen.lsViewsKey);
 
     if (storedViews !== null) {
       const views = JSON.parse(storedViews);
@@ -42,11 +30,11 @@ const ArticleDetails = ({ article, logView }: IArticleDetailsProps) => {
         if (id) return;
 
         views.push(article.id);
-        localStorage.setItem(lsViewsKey, JSON.stringify(views));
+        localStorage.setItem(cfg.gen.lsViewsKey, JSON.stringify(views));
         logView(article.id);
       }
     } else {
-      localStorage.setItem(lsViewsKey, JSON.stringify([article.id]));
+      localStorage.setItem(cfg.gen.lsViewsKey, JSON.stringify([article.id]));
       logView(article.id);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -58,32 +46,27 @@ const ArticleDetails = ({ article, logView }: IArticleDetailsProps) => {
         <div className={s.articleDetails}>
           <PageMeta title={article.title} description={article.description} />
 
-          <div className={s.publicationDate}>
-            <p className={s.author}>{`Автор: ${article.author}`}</p>
-            <p className={s.timestamp}>{`Публикация: ${convertDate(
-              article.timestamp
-            )}`}</p>
-          </div>
+          <PublicationInfoWrapper article={article}>
+            <div className={s.thumb}>
+              {article?.views && (
+                <ViewCounter
+                  views={article?.views}
+                  left={"15px"}
+                  bottom={"15px"}
+                />
+              )}
 
-          <div className={s.thumb}>
-            {article?.views && (
-              <ViewCounter
-                views={article?.views}
-                left={"15px"}
-                bottom={"15px"}
+              <ImageHandler
+                cid={article.ipfs}
+                alt={article.title}
+                grayscale={imgFilter(currentTheme)}
               />
-            )}
+            </div>
+          </PublicationInfoWrapper>
 
-            <ImageHandler
-              cid={article.ipfs}
-              alt={article.title}
-              grayscale={imgFilter()}
-            />
+          <div className={s.articleElementsWrap}>
+            <ArticleElements elements={articleText} />
           </div>
-
-          <p className={s.id}>{`ID: ${article.id || "000"}`}</p>
-
-          <ArticleElements elements={articleText} />
         </div>
       </article>
     </InnerContainer>

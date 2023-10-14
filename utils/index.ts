@@ -1,9 +1,14 @@
-import { THEME_BY_DEFAULT } from "@/constants";
+import { globalConfig as cfg } from "@/config";
 
-const defaultTheme = THEME_BY_DEFAULT;
+// ---------- Theme:
 
 export const getCurrentTheme = (theme: string | undefined) =>
-  theme === "light" || theme === "dark" ? theme : defaultTheme;
+  theme === "light" || theme === "dark" ? theme : cfg.gen.defaultTheme;
+
+export const imgFilter = (currentTheme: string) =>
+  currentTheme === "dark" ? 50 : 0;
+
+// ---------- Other:
 
 export const isLandscape = () =>
   typeof window !== "undefined"

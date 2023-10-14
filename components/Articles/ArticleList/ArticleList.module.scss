@@ -1,8 +1,9 @@
+@import "../../../styles/extends";
 @import "../../../styles/mixins";
 
 .articlesWrap {
   @include themeHandler() {
-    position: relative;
-    padding-top: 60px;
+    @extend %extends-position-relative;
+    @include paddingT(60px);
   }
 }

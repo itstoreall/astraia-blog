@@ -1,5 +1,6 @@
 import { GenMetadata } from "@/types";
 import { IGenMetadataProps } from "@/interfaces";
+import { globalConfig as cfg } from "@/config";
 import s from "../../page.module.scss";
 import services from "@/services";
 import ArticleDetails from "@/components/Articles/Details";
@@ -8,7 +9,7 @@ import { updatetArticleViews } from "@/actions/serverActions";
 
 export const generateMetadata: GenMetadata = async ({ params: { id } }) => {
   const article = await services.getArticle(id);
-  return metadataHandler("/articles/id", article);
+  return metadataHandler(cfg.details.pathname, article);
 };
 
 const Article = async ({ params: { id } }: IGenMetadataProps) => {

@@ -1,12 +1,13 @@
-import Link from 'next/link';
-import s from './Footer.module.scss';
+import Link from "next/link";
+import { globalConfig as cfg } from "@/config";
+import s from "./Footer.module.scss";
 
 const Copyright = () => {
   return (
     <div className={s.copyrightBlock}>
       <div className={s.copyright}>
-        <Link href='/' className={s.logoLink}>
-          Astraia
+        <Link href={cfg.home.pathname} className={s.logoLink}>
+          {cfg.gen.blogTitle}
         </Link>
         <span className={s.copyrightIcon}>&copy;</span>
         <time>{new Date().getFullYear()}</time>

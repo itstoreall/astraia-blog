@@ -13,65 +13,45 @@
         @include paddingB(40px);
       }
 
-      .publicationDate {
-        @extend %extends-flex-x-between;
-        @include marginB(20px);
-        @extend %extends-font-size-14px;
-
-        @include minWidth($tablet) {
-          @include x(flex-start);
-        }
-
-        > p {
-          @extend %extends-color-middle-dark;
-
-          &.author {
-            @include minWidth($tablet) {
-              @include marginR(40px);
-            }
-          }
-
-          // &.timestamp { } // *
-        }
-      }
+      // ---------- PublicationInfoWrapper starts here!
 
       .thumb {
         @extend %extends-position-relative;
         @extend %extends-flex-x-center-y-center;
         @include marginB(20px);
-        @include borderRadius(8px);
+        @extend %extends-border-radius-8px;
         @extend %extends-overflow-hidden;
 
-        @include minWidth($tablet) {
+        @include mediaScreen("min", $tablet) {
           @include borderRadius(10px);
         }
 
-        @include minWidth($desktop) {
+        @include mediaScreen("min", $desktop) {
           @include borderRadius(14px);
         }
       }
 
-      .id {
-        @include fontSize(12px);
-        @include marginB(30px);
-        @extend %extends-color-middle-dark;
-      }
+      // ---------- PublicationInfoWrapper ends here!
 
-      .articleElements {
-        > h3 {
-          @extend %extends-transition-04s-ease;
+      .articleElementsWrap {
+        // ---------- ArticleElements is here!
 
-          &:not(:last-child) {
-            @include marginB(20px);
-            @include paddingT(10px);
+        > div {
+          > h3 {
+            @extend %extends-transition-04s-ease;
+
+            &:not(:last-child) {
+              @include marginB(20px);
+              @include paddingT(10px);
+            }
           }
-        }
 
-        > p {
-          @extend %extends-transition-04s-ease;
+          > p {
+            @extend %extends-transition-04s-ease;
 
-          &:not(:last-child) {
-            @include marginB(30px);
+            &:not(:last-child) {
+              @include marginB(30px);
+            }
           }
         }
       }
