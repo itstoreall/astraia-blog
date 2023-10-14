@@ -3,6 +3,7 @@ import { useTheme } from "next-themes";
 import { usePathname } from "next/navigation"; // useRouter, useSearchParams
 import Link from "next/link";
 import { getCurrentTheme } from "@/utils";
+import { globalConfig as cfg } from "@/config";
 import s from "./ArticlesButton.module.scss";
 import FixedContainer from "../Containers/FixedContainer";
 
@@ -25,10 +26,10 @@ const ArticlesButton = () => {
 
   return (
     <>
-      {pathname !== "/articles" && (
+      {pathname !== cfg.articles.pathname && (
         <FixedContainer>
           <nav className={`${s.articlesButtonWrap} ${s[currentTheme]}`}>
-            <Link href={"/articles"}>
+            <Link href={cfg.articles.pathname}>
               <div className={s.articlesButton}>
                 <svg
                   width={width}

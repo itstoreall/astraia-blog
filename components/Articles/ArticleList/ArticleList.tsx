@@ -3,6 +3,7 @@
 import { useTheme } from "next-themes";
 import { getCurrentTheme } from "@/utils";
 import { IArticle } from "@/interfaces";
+import { globalConfig as cfg } from "@/config";
 import s from "./ArticleList.module.scss";
 import InnerContainer from "@/components/Containers/InnerContainer";
 import Cards from "@/components/Cards";
@@ -15,7 +16,7 @@ const ArticleList = ({ articles }: { articles: IArticle[] }) => {
   return (
     <InnerContainer>
       <div className={`${s.articlesWrap} ${s[currentTheme]}`}>
-        <Label text={"Статьи"} />
+        <Label text={cfg.articles.content.articleList.label} />
         <Cards articles={articles} />
       </div>
     </InnerContainer>

@@ -316,6 +316,10 @@
   border-radius: 8px;
 }
 
+%extends-border-radius-9px {
+  border-radius: 9px;
+}
+
 %extends-border-radius-14px {
   border-radius: 14px;
 }
@@ -414,6 +418,16 @@
 %extends-transition-bgc-04s-ease {
   -webkit-transition: background-color 0.4s ease;
   transition: background-color 0.4s ease;
+}
+
+%extends-transition-bc-04s-ease {
+  -webkit-transition: border-color 0.4s ease;
+  transition: border-color 0.4s ease;
+}
+
+%extends-transition-fill-04s-ease {
+  -webkit-transition: fill 0.4s ease;
+  transition: fill 0.4s ease;
 }
 
 // ----------- other:

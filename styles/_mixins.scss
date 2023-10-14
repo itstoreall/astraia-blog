@@ -180,6 +180,14 @@
 
 // ------- border:
 
+@mixin border($b) {
+  border: $b;
+}
+
+@mixin borderColor($bc) {
+  border-color: $bc;
+}
+
 @mixin borderRadius($br) {
   border-radius: $br;
 }
@@ -217,6 +225,12 @@
 
     @content;
   }
+}
+
+// ------- other:
+
+@mixin fill($f) {
+  fill: $f;
 }
 
 // ------- @media
