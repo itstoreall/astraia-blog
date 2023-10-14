@@ -3,7 +3,8 @@ import { IArticle } from "@/interfaces";
 import { globalConfig as cfg } from "@/config";
 
 const defaultImage = {
-  url: `${cfg.gen.domain}/_next/static/media/defaultImage.537bc5b3.jpg`,
+  url: `${cfg.gen.domain}/${cfg.gen.defaultImagePath}`,
+  // url: `${cfg.gen.domain}/_next/static/media/defaultImage.537bc5b3.jpg`,
   width: 1200,
   height: 675,
   alt: cfg.gen.blogTitle,

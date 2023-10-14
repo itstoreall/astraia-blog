@@ -5,11 +5,10 @@
 .viewCounter {
   @extend %extends-position-absolute;
   @extend %extends-flex-y-center;
-  @extend %extends-z-index-1;
-
-  @include bgColor($middleGrey);
   @include padding(2px 8px 2px 6px);
-  @include borderRadius(15px);
+  @extend %extends-bgc-middleGrey;
+  @extend %extends-border-radius-15px;
+  @extend %extends-z-index-1;
 
   // ------- Eye (svg):
 
@@ -20,7 +19,8 @@
   // ------- views:
 
   .value {
+    @extend %extends-font-size-13px;
+    @extend %extends-font-weight-600;
     @extend %extends-color-white;
-    @include fontSW(13px, 600);
   }
 }

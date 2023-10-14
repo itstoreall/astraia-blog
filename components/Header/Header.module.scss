@@ -9,11 +9,11 @@
 
     .content {
       @extend %extends-flex-x-between-y-center;
-      padding: 0 20px;
-      height: 100%;
+      @include padding(0 20px);
+      @extend %extends-height-100;
 
       .logo {
-        z-index: 3;
+        @extend %extends-z-index-3;
       }
     }
   }
