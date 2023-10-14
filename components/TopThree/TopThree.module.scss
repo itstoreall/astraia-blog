@@ -9,14 +9,14 @@
     .list {
       @include themeHandler() {
         @extend %extends-list-style-none;
-        @include padding(0);
-        @include margin(0);
+        @extend %extends-padding-0;
+        @extend %extends-margin-0;
         @include marginB(-20px);
 
-        @include minWidth($tablet) {
+        @include mediaScreen("min", $tablet) {
           @include flexWrap(wrap);
 
-          @include maxWidth($desktop - 1) {
+          @include mediaScreen("max", $desktop - 1) {
             @include x(space-between);
           }
         }
@@ -24,7 +24,7 @@
         .item {
           @include marginB(20px);
           @include bgColor(var(--background-hover));
-          @include borderRadius(8px);
+          @extend %extends-border-radius-8px;
           @extend %extends-box-shadow;
           @extend %extends-transition-04s-ease;
 
@@ -32,11 +32,11 @@
             @extend %extends-box-shadow-hover;
           }
 
-          @include minWidth($tablet) {
+          @include mediaScreen("min", $tablet) {
             @include width(49%);
           }
 
-          @include minWidth($desktop) {
+          @include mediaScreen("min", $desktop) {
             @include width(32%);
 
             &:not(:nth-child(3n + 3)) {
@@ -58,17 +58,17 @@
 
               h3 {
                 @include marginB(12px);
-                @include fontSize(15px);
+                @extend %extends-font-size-15px;
                 @include color(var(--text));
-                @include lineClamp(1);
+                @extend %extends-line-clamp-1;
                 @extend %extends-transition-04s-ease;
               }
 
               .description {
                 @extend %extends-font-size-13px;
                 @include color(var(--text-light));
-                @include lineHight(1.4);
-                @include lineClamp(2);
+                @extend %extends-line-height-1_4;
+                @extend %extends-line-clamp-2;
                 @extend %extends-transition-04s-ease;
               }
             }

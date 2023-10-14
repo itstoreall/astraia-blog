@@ -1,4 +1,5 @@
 @import "../theme/index.scss";
+@import "../styles/vars.scss";
 
 // ----------- position:
 
@@ -14,10 +15,30 @@
   position: fixed;
 }
 
+%extends-top-0 {
+  top: 0;
+}
+
+%extends-left-0 {
+  left: 0;
+}
+
+%extends-right-0 {
+  right: 0;
+}
+
+%extends-bottom-0 {
+  bottom: 0;
+}
+
 // ----------- display:
 
 %extends-display-block {
   display: block;
+}
+
+%extends-display-inline-block {
+  display: inline-block;
 }
 
 %extends-display-flex {
@@ -123,6 +144,22 @@
   width: 100%;
 }
 
+%extends-width-96 {
+  width: 96%;
+}
+
+%extends-width-94 {
+  width: 94%;
+}
+
+%extends-width-92 {
+  width: 92%;
+}
+
+%extends-max-width-max {
+  max-width: $max;
+}
+
 // ----------- height:
 
 %extends-height-100 {
@@ -165,6 +202,10 @@
   font-size: 20px;
 }
 
+%extends-font-size-28px {
+  font-size: 28px;
+}
+
 // - font-weight:
 
 %extends-font-weight-400 {
@@ -173,6 +214,10 @@
 
 %extends-font-weight-600 {
   font-weight: 600;
+}
+
+%extends-font-weight-700 {
+  font-weight: 700;
 }
 
 // - line-height
@@ -241,6 +286,10 @@
   background-color: $middleGrey;
 }
 
+%extends-bgc-middleDark {
+  background-color: $middleDark;
+}
+
 %extends-bgc-transparent {
   background-color: transparent;
 }
@@ -249,6 +298,10 @@
 
 %extends-border-none {
   border: none;
+}
+
+%extends-border-radius-50 {
+  border-radius: 50%;
 }
 
 %extends-border-radius-4px {
@@ -261,6 +314,18 @@
 
 %extends-border-radius-8px {
   border-radius: 8px;
+}
+
+%extends-border-radius-14px {
+  border-radius: 14px;
+}
+
+%extends-border-radius-15px {
+  border-radius: 15px;
+}
+
+%extends-border-radius-34px {
+  border-radius: 34px;
 }
 
 // ----------- z-index:
@@ -285,6 +350,10 @@
 
 %extends-overflow-y-scroll {
   overflow-y: scroll;
+}
+
+%extends-white-space-nowrap {
+  white-space: nowrap;
 }
 
 %extends-hide-scrollbar {
@@ -327,6 +396,12 @@
 
 %extends-box-shadow-hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+// ----------- opacity:
+
+%extends-opacity-0 {
+  opacity: 0;
 }
 
 // ----------- transition:

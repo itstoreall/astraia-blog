@@ -4,24 +4,17 @@
 // -------------- Page Description:
 
 .pageMeta {
-  > h2 {
-    @include marginB(20px);
-    @include fontSize(28px);
-    @extend %extends-transition-04s-ease;
-
-    @include minWidth($tablet) {
-      @include width(80%);
-      @include fontSize(32px);
-    }
-
-    @include minWidth($desktop) {
-      @include width(80%);
-      @include fontSize(36px);
-    }
+  @include mediaScreen("min", $desktop) {
+    @include width(90%);
   }
 
-  > p.description {
-    @include pageDescription();
+  > h2 {
+    @include marginB(20px);
+    @extend %extends-transition-04s-ease;
+  }
+
+  > p {
+    @extend %extends-transition-04s-ease;
   }
 }
 
@@ -36,8 +29,8 @@
   > p.description {
     @extend %extends-font-size-13px;
     @include color(var(--text-light));
-    @include lineHight(1.4);
-    @include lineClamp(2);
+    @extend %extends-line-height-1_4;
+    @extend %extends-line-clamp-2;
     @extend %extends-transition-04s-ease;
   }
 }

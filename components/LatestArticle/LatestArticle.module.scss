@@ -7,22 +7,21 @@
 
   .latestArticle {
     @include padding(15px 15px 20px);
-    @include borderRadius(14px);
+    @extend %extends-border-radius-14px;
     @include bgColor(var(--background-hover));
     @extend %extends-box-shadow;
     @extend %extends-transition-04s-ease;
-
-    cursor: pointer;
+    @extend %extends-cursor-pointer;
 
     &:hover {
       @extend %extends-box-shadow-hover;
     }
 
-    @include minWidth($tablet) {
+    @include mediaScreen("min", $tablet) {
       @include padding(20px 20px 30px);
     }
 
-    @include minWidth($desktop) {
+    @include mediaScreen("min", $desktop) {
       @include display(flex);
       @include padding(20px 20px 20px);
     }
@@ -32,16 +31,16 @@
       @extend %extends-position-relative;
       @extend %extends-width-100;
 
-      @include maxWidth($desktop - 0.1) {
+      @include mediaScreen("max", $desktop - 0.1) {
         @include marginB(20px);
       }
 
-      @include minWidth($desktop) {
+      @include mediaScreen("min", $desktop) {
         @include width(65%);
       }
 
       > img {
-        @include borderRadius(6px);
+        @extend %extends-border-radius-6px;
       }
     }
 
@@ -51,14 +50,14 @@
       @extend %extends-width-100;
       @extend %extends-hide-scrollbar;
 
-      @include minWidth($desktop) {
+      @include mediaScreen("min", $desktop) {
         @include width(35%);
         @include height(280px);
-        overflow-y: scroll;
+        @include overflowY(scroll);
       }
 
       .metaContent {
-        @include minWidth($desktop) {
+        @include mediaScreen("min", $desktop) {
           @include padding(0 10px 0 20px);
         }
 
@@ -66,15 +65,15 @@
 
         > h3 {
           @include marginB(20px);
-          @include wordWrap(break-word);
+          @extend %extends-word-wrap-break-word;
           @extend %extends-transition-04s-ease;
 
           &:hover {
             @include color(var(--contrast-background-hover));
           }
 
-          @include minWidth($tablet) {
-            @include maxWidth($desktop - 0.1) {
+          @include mediaScreen("min", $tablet) {
+            @include mediaScreen("max", $desktop - 0.1) {
               @include width(80%);
             }
           }
@@ -82,16 +81,15 @@
 
         > p.metaDescription {
           @extend %extends-font-size-14px;
-          @include lineHight(1.4);
+          @extend %extends-line-height-1_4;
           @include color(var(--text-light));
           @extend %extends-transition-04s-ease;
-          // @include lineClamp(7);
 
-          @include minWidth($tablet) {
+          @include mediaScreen("min", $tablet) {
             @include fontSize(16px);
           }
 
-          @include minWidth($desktop) {
+          @include mediaScreen("min", $desktop) {
             @include fontSize(16px);
           }
         }

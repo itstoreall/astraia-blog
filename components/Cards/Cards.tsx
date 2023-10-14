@@ -1,7 +1,8 @@
 import { useTheme } from "next-themes";
 import Link from "next/link";
-import { getCurrentTheme } from "@/utils";
+import { getCurrentTheme, imgFilter } from "@/utils";
 import { IArticle } from "@/interfaces";
+import { globalConfig as cfg } from "@/config";
 import s from "./Cards.module.scss";
 import ViewCounter from "../ViewCounter";
 import ImageHandler from "../Image/ImageHandler";
@@ -10,13 +11,12 @@ import CardSmallMeta from "../Meta/CardSmallMeta";
 const Cards = ({ articles }: { articles: IArticle[] }) => {
   const { theme } = useTheme();
   const currentTheme = getCurrentTheme(theme);
-  const imgFilter = () => (currentTheme === "dark" ? 50 : 0);
 
   return (
     <ul className={`${s.cardList} ${s[currentTheme]}`}>
       {articles.map((art: IArticle) => (
         <li key={art.id} className={s.item}>
-          <Link href={`/articles/${art.id}`}>
+          <Link href={`${cfg.articles.pathname}/${art.id}`}>
             <div className={s.card}>
               <div className={s.thumb}>
                 {art?.views && (
@@ -30,7 +30,7 @@ const Cards = ({ articles }: { articles: IArticle[] }) => {
                 <ImageHandler
                   cid={art.ipfs}
                   alt={art.title}
-                  grayscale={imgFilter()}
+                  grayscale={imgFilter(currentTheme)}
                 />
               </div>
               <div className={s.meta}>
