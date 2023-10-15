@@ -41,6 +41,8 @@ const ArticlesButton = () => {
                 </svg>
               </div>
             </Link>
+
+            <span className={s.buttonBg} />
           </nav>
         </FixedContainer>
       )}
