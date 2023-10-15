@@ -24,8 +24,10 @@ const Preloader = () => {
   return (
     <>
       {isPreloader && (
-        <div className={s.preloader}>
-          <Spinner />
+        <div className={s.preloaderWrap}>
+          <div className={s.preloader}>
+            <Spinner />
+          </div>
         </div>
       )}
     </>

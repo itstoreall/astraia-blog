@@ -1,7 +1,5 @@
-@import "../../styles//extends";
+@import "../../styles/extends";
+@import "../../styles/mixins";
+@import "../../styles/vars.scss";
 
-.spinnerWrap {
-  @extend %extends-flex-x-center-y-center;
-  @extend %extends-width-100;
-  @extend %extends-height-80vh;
-}
+// .spinnerWrap {}
