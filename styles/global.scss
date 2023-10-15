@@ -67,8 +67,8 @@ code {
 
 .main {
   @extend %extends-margin-0-auto;
-  max-width: $max;
-  min-height: 100vh;
+  @include maxWidth($max);
+  @extend %extends-min-height-100vh;
 }
 
 [data-theme="light"] body {

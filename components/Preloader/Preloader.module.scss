@@ -1,0 +1,11 @@
+@import "../../styles/extends";
+@import "../../styles/mixins";
+@import "../../styles/vars.scss";
+
+.preloader {
+  @extend %extends-position-fixed;
+  @extend %extends-width-100;
+  @extend %extends-height-100vh;
+  @extend %extends-z-index-4;
+  @extend %extends-bgc-dark;
+}
