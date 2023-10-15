@@ -2,10 +2,19 @@
 @import "../../styles/mixins";
 @import "../../styles/vars.scss";
 
-.preloader {
+.preloaderWrap {
   @extend %extends-position-fixed;
   @extend %extends-width-100;
   @extend %extends-height-100vh;
   @extend %extends-z-index-4;
   @extend %extends-bgc-dark;
+
+  .preloader {
+    @extend %extends-flex-x-center-y-center;
+    @extend %extends-height-80vh;
+
+    @include mediaScreen("min", $desktop) {
+      @include height(90vh);
+    }
+  }
 }
