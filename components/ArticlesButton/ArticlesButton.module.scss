@@ -8,12 +8,22 @@
     @extend %extends-position-absolute;
     @include top(11px);
     @include right(20px);
-    @extend %extends-display-inline-block;
     @include padding(4px);
-    @include bgColor(var(--secondary-background));
-    @extend %extends-border-radius-9px;
     @extend %extends-cursor-pointer;
     @extend %extends-transition-bgc-04s-ease;
+
+    .buttonBg {
+      @extend %extends-position-absolute;
+      @extend %extends-top-0;
+      @extend %extends-left-0;
+      @extend %extends-display-inline-block;
+      @extend %extends-width-100;
+      @extend %extends-height-100;
+      @extend %extends-border-radius-9px;
+      @extend %extends-opacity-0_6;
+      @extend %extends-z-index--1;
+      @include bgColor(var(--secondary-background));
+    }
 
     .articlesButton {
       @extend %extends-display-flex;
